@@ -3,7 +3,7 @@ import * as ATF from 'algo-testing-framework';
 import { Lazy, Outcome, Language } from 'algo-testing-framework';
 import { CarSimulationSummary, CarSimulationViewer } from './components';
 import { functionality, Simulation, CarSimulationException } from './simulation';
-import { Maybe } from 'maybe';
+import { Maybe } from './maybe';
 
 type IScored = ATF.IScored;
 type IHasDifficulty = ATF.IHasDifficulty;

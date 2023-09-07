@@ -24,7 +24,6 @@
     "classnames": "^2.3.1",
     "js-algorithms": "github:UCLeuvenLimburg/js-algorithms",
     "lodash": "^4.17.21",
-    "maybe": "github:UCLeuvenLimburg/maybe",
     "predicates": "^2.0.3",
     "rc-slider": "9.2.4",
     "react": "^16.14.0",
