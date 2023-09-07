@@ -104,7 +104,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 }`;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Welkom bij de UCLL rijsimulatie!
                         </p>
@@ -147,7 +147,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             opdat het {code(`student.js`)}-script heringeladen wordt. Druk daarna op de play-knop (onder het stadsplan, rechts van de slider): dit zorgt ervoor dat de
                             functie {code(`myFirstFunction`)} wordt <em>opgeroepen</em>, met als gevolg dat de instructies die het bevat uitgevoerd worden.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -160,7 +160,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 }`;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Welcome to the UCLL Driving Simulation!
                         </p>
@@ -204,7 +204,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Then press the play-button (below the city map, to the right of the slider): this causes your function {code(`myFirstFunction`)} to be <em>called</em>,
                             meaning that all the instructions it contains will be executed.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -260,7 +260,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 }`;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             De bestemming is nu twee vakjes ver. De oplossing ligt voor de hand:
                             we willen twee keer na elkaar de {code(`forward(bike)`)} uitvoeren.
@@ -284,7 +284,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             zodat de instructie 2&times; na elkaar voorkomt. Refresh en verifieer dat
                             je veilig aankomt op je bestemming. De linkerkant zou tevens groen moeten geworden zijn.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -330,12 +330,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Het zou duidelijk moeten zijn wat er verwacht wordt.
                             De naam van de functie komt overeen met de titel van de oefening.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -382,11 +382,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Dit wordt wel heel voorspelbaar (en repetitief)&hellip;
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -444,7 +444,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Och, dit is gewoon irritant. Wie stelt deze opgaves toch op?
                         </p>
@@ -471,7 +471,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             Gebruik dit stukje code om deze oefening op te lossen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -522,11 +522,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Alsof dit een uitdaging is. Dankzij de loop voelen we ons onoverwinnelijk.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -577,14 +577,14 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Dit hadden we niet zien aankomen. Wat nu?
                         </p>
                         <p>
                             Blijkt dat onze fiets uitgerust is met een stuur. Je kan dit naar rechts draaien met {code(`turnRight(bike)`)}.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -630,7 +630,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Hier is het nuttig om twee loops te gebruiken:
                         </p>
@@ -687,7 +687,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             m.a.w. het is dezelfde syntax (= schrijfwijze) als wanneer je {code(`forward`)} of {code(`turnRight`)} oproept.
                             Los deze oefening zoveel mogelijk gebruik makend van eerder geschreven functies.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -734,11 +734,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Hint: 3 - 10 - 2.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -800,7 +800,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Dit is al wat vervelender. We moeten eerst 7 stappen vooruit, dan 9, dan 3. Zeven vakjes vooruit kunnen we schrijven als {code(`forward5(bike); twiceForward(bike);`)}.
                             Dit is echter niet zo duidelijk. Niemand zegt "rij 10 meter, rij 10 meter, rij 5 meter, rij 2 meter", maar
@@ -826,7 +826,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Om deze functie te gebruiken om bv. 18 stappen voorwaarts te rijden, schrijf je {code(`forwardN(bike, 18)`)}.
                             Voeg de functie {code(`forwardN`)} toe aan {code(`student.js`)} en gebruik voortaan deze om meerdere stappen vooruit te rijden.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -900,7 +900,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Hoeveel meter moet je rijden van het stadshuis van Leuven tot het station? We vermoeden dat je hier
                             geen exact getal op kunt plakken. Wij ook niet. Betekent dit dat we onmogelijk iemand de
@@ -940,7 +940,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             Gebruik deze nieuwe constructie om deze oefening op te lossen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1005,12 +1005,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Dit zou geen probleem moeten vormen. Merk op dat je instructies zich weer zullen moeten aanpassen aan de weg.
                             Vergeet niet dat je reeds geschreven functies kunt herbruiken!
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1066,7 +1066,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Dit escaleerde snel. Het is precies alsof de opgave-opsteller
                             zijn best doet om het ons moeilijk te maken. Wat een sadist.
@@ -1091,7 +1091,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Doe hetzelfde voor deze oefening: zoek naar welke instructies herhaald worden,
                             hoe vaak deze herhaald worden en stel een lus op die voor de herhaling zorgt.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1145,7 +1145,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             caption = "Parameters";
 
-            header = <React.Fragment>Parameters</React.Fragment>;
+            header = <>Parameters</>;
 
             hasDifficulty() : this is ATF.IHasDifficulty { return false; }
 
@@ -1156,7 +1156,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             get explanations() : JSX.Element
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <ATF.Components.DescriptionBox>
                             <p>
                                 Je hebt misschien uit de vorige oefening afgeleid dat het hernoemen van de parameter van {code(`bike`)} naar {code(`car`)} ervoor
@@ -1181,7 +1181,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 binnen deze reeks oefeningen hebben auto's niks meer te bieden dan fietsen.
                             </p>
                         </ATF.Components.DescriptionBox>
-                    </React.Fragment>
+                    </>
                 );
             }
         };
@@ -1205,7 +1205,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             We moeten je iets toegeven&hellip; We dachten een goede deal te hebben gemaakt
                             toen we onze fiets inwisselden voor een auto, maar blijkt nu dat de auto niet naar links kan
@@ -1214,7 +1214,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             Om deze oefening op te lossen maak je best eerst een aparte functie {code(`turnLeft`)}, zodat je deze functionaliteit gemakkelijk kunt herbruiken in latere oefeningen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1267,11 +1267,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Het wordt al wat uitdagender.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1331,7 +1331,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Een driesterrenoefening! Deze zijn wat uitdagender. In principe zou je deze
                             moeten kunnen oplossen, maar vergt het wat meer moeite. Als je deze
@@ -1344,14 +1344,14 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Dit is al meer een doordenkertje, maar het is perfect mogelijk instructies te geven die ons
                             gegarandeerd bij onze eindbestemming brengen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
             protected get hint()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Focus eerst op het eerste geval. Maak hierbij telkens gebruik van {code(`forwardUntilWall`)} om vooruit te rijden.
                         </p>
@@ -1362,7 +1362,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             Het is perfect aanvaardbaar om code te schrijven die in de "verkeerde" gevallen niks doet.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1415,11 +1415,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Deze kan opgelost worden met hetzelfde trucje uit de vorige oefening.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1471,22 +1471,22 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Dit zal je anders moeten aanpakken&hellip;
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
             protected get hint()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Blijven draaien tot je een doorgang vindt.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1577,7 +1577,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Op basis van de testgevallen ziet het ernaar uit dat je de eerste straat rechts in moet.
                             Zoals de twee sterretjes aangeven is dit een moeilijkere oefening, ondanks
@@ -1636,7 +1636,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Dankzij deze functie zou het oplossen van deze oefening veel vlotter moeten gaan:
                             blijven rijden zolang er rechts een muur staat, dan rechts draaien en vooruit.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1700,12 +1700,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Na de vorige oefening zou deze moeten meevallen.
                             Vergeet niet om hulpfuncties te defini&euml;ren!
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1767,11 +1767,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Je weet wat doen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1850,7 +1850,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Deze doet weer wat lastig. Als je {code(`firstRight`)} gebruikt,
                             ga je meteen die straat in. Je moet dan rechtsomkeer maken,
@@ -1912,7 +1912,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 Rij tot einde straat.
                             </li>
                         </ul>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1970,11 +1970,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             We hadden het moeten zien aankomen&hellip;
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2060,7 +2060,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Het ziet er naar uit dat de opgaveopsteller ons iets duidelijk wil maken&hellip; We kunnen
                             het negeren, maar we vrezen dat we er snel genoeg spijt van zouden hebben.
@@ -2102,7 +2102,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Schrijf de functie {code(`forwardUntilNthRight(car, nrights)`)} die deze lus bevat.
                             Gebruik deze vervolgens om de oefening op te lossen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2164,11 +2164,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Vergeet niet de nodige hulpfuncties te schrijven!
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2262,7 +2262,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Maak gebruik van {code(`forwardUntilNthLeft`)} en {code(`forwardUntilNthRight`)} om deze oefening op te lossen.
                         </p>
@@ -2309,7 +2309,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 Hou het echter wel altijd leesbaar! Geneste functies vormen geen excuus om zomaar overal korte namen te gebruiken.
                             </li>
                         </ul>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2393,7 +2393,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Zoek naar de <em>dead end</em>. Een dead end is een vakje waar je vooruit, links noch rechts kan rijden. Een mogelijk algoritme ziet er zo uit:
                         </p>
@@ -2439,7 +2439,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 Zo niet, rijd je terug naar de beginpositie en probeer je een andere richting uit.
                             </li>
                         </ul>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2531,7 +2531,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Blijf de weg volgen zolang er geen dead end is.
                         </p>
@@ -2540,7 +2540,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             als je ze voor het eerst tegenkomt. Je kan deze proberen op te lossen,
                             maar als het je niet lukt, is dat perfect normaal en kan je ze best uitstellen tot later op het semester.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2613,12 +2613,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Een uitdaging! Om uit een doolhof te geraken, kan je de <a href="https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower">right-hand rule</a> gebruiken.
                             Blijf doorgaan tot je een dead end tegenkomt.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2686,7 +2686,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Ai&hellip; dit is onoplosbaar gezien we niet weten waar de bestemming is. Totnogtoe
                             konden we de bestemming herkennen aan de context. Bv. de bestemming is een dead end,
@@ -2703,7 +2703,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Je kan nu een functie {code(functionName)} schrijven die weet wanneer
                             de auto moet stoppen.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2757,11 +2757,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Je zal het veld moeten afgaan.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2853,12 +2853,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             De heilige graal. Schrijf een algoritme dat een willekeurige bestemming kan bereiken.
                             Dit is een moeilijke oefening. Deze zou je moeten kunnen oplossen tegen je afstudeert.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
