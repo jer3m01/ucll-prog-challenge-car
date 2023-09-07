@@ -6,14 +6,10 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 const inputPath = path.join('.', 'src');
 const outputPath = process.env['OUTPUT'];
 
-if ( !inputPath )
-{
-    throw new Error('No input path defined! Set environment variable INPUT');
-}
 
 if ( !outputPath )
 {
-    throw new Error('No output path defined! Set environment variable INPUT');
+    throw new Error('No output path defined! Set environment variable OUTPUT');
 }
 
 function removePrefix(string, prefix)
