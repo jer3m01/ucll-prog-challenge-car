@@ -84,6 +84,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3027,7 +3028,7 @@ async function start()
 {
     const functionRepository = ATF.createFunctionRepositoryFromWindow();
 
-    ATF.initialize( await createChapter( functionRepository ), { verifySolutions: verifySolutions } );
+    ATF.initialize( await createChapter( functionRepository ), { verifySolutions: verifySolutions, language: language } );
 }
 
 start();

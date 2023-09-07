@@ -124,6 +124,7 @@ function chapter(options)
             new webpack.DefinePlugin({
                 verifySolutions: JSON.stringify(options.verifySolutions),
                 extraTests: JSON.stringify(options.extraTests),
+                language: JSON.stringify(options.language),
                 VERSION: JSON.stringify(require("./package.json").version),
             }),
         ],
@@ -133,8 +134,15 @@ function chapter(options)
 
 module.exports = function(env, argv)
 {
-    let verifySolutions = !('NOVERIFY' in process.env);
-    let extraTests = ('EXTRATESTS' in process.env);
+    const verifySolutions = !('NOVERIFY' in process.env);
+    const extraTests = ('EXTRATESTS' in process.env);
 
-    return chapter({verifySolutions, extraTests});
+    if ( !('LANGUAGE' in process.env) )
+    {
+        throw new Error('No language defined');
+    }
+
+    const language = process.env['LANGUAGE'];
+
+    return chapter({verifySolutions, extraTests, language});
 }

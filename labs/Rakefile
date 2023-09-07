@@ -40,6 +40,7 @@ def build(lab, devmode = true, extra_tests = false)
     puts "Compiling"
     environment_variables = { 'INPUT' => input_directory, 'OUTPUT' => output_directory }
     environment_variables['EXTRATESTS'] = '1' if extra_tests
+    environment_variables['LANGUAGE'] = 'nl'
     system(environment_variables, "npm run build:#{mode}") or abort "Failed to build #{lab}"
 
     puts "Moving #{output_directory} to #{dist_lab_directory}"
