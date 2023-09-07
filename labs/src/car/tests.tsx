@@ -95,62 +95,6 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 }
             }
 
-            private get description_nl()
-            {
-                const myFirstFunction : string = `
-                function myFirstFunction(bike)
-                {
-                    forward(bike);
-                }`;
-
-                return (
-                    <>
-                        <p>
-                            Welkom bij de UCLL rijsimulatie!
-                        </p>
-                        <p>
-                            Deze eerste reeks oefeningen brengt je in contact met de bouwblokken
-                            waaruit algoritmes bestaan:
-                        </p>
-                        <ul>
-                            <li>
-                                Sequentie
-                            </li>
-                            <li>
-                                Voorwaardelijke uitvoering
-                            </li>
-                            <li>
-                                Herhaling
-                            </li>
-                        </ul>
-                        <p>
-                            Laten we er meteen aan beginnen. Elk van deze oefeningen plaatst je in een labyrintische stad waardoor je je weg
-                            moet banen naar je bestemming. Deze bestemming wordt telkens in het groen aangegeven.
-                        </p>
-                        <p>
-                            Je voertuig is echter niet interactief: je moet op voorhand alle rijinstructies ingeven, waarna
-                            je voertuig deze blindelings uitvoert. Het is dus belangrijk dat je goed nadenkt
-                            over welke instructies je ingeeft, zoniet zal je verongelukken.
-                        </p>
-                        <p>
-                            Instructies geef je als volgt in: open het bestand {code(`student.js`)} dat zich in dezelfde directory
-                            bevindt als dit html-bestand. Voor deze eerste oefening verklappen we al wat je moet schrijven:
-                        </p>
-                        {renderSourceCode(myFirstFunction)}
-                        <p>
-                            Dit definieert een <em>functie</em> genaamd {code(`myFirstFunction`)}.
-                            Een functie is een samenbundeling van instructies. In dit geval is er zo maar &eacute;&eacute;n, nl.
-                            {code(`forward(bike)`)}. Je kan vermoedelijk al raden wat het effect is van deze instructie.
-                        </p>
-                        <p>
-                            Telkens je {code(`student.js`)} gewijzigd hebt en je het resultaat ervan wil bewonderen, moet je eerst de pagina refreshen (F5)
-                            opdat het {code(`student.js`)}-script heringeladen wordt. Druk daarna op de play-knop (onder het stadsplan, rechts van de slider): dit zorgt ervoor dat de
-                            functie {code(`myFirstFunction`)} wordt <em>opgeroepen</em>, met als gevolg dat de instructies die het bevat uitgevoerd worden.
-                        </p>
-                    </>
-                );
-            }
-
             private get description_en()
             {
                 const myFirstFunction : string = `
@@ -208,6 +152,62 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 );
             }
 
+            private get description_nl()
+            {
+                const myFirstFunction : string = `
+                function myFirstFunction(bike)
+                {
+                    forward(bike);
+                }`;
+
+                return (
+                    <>
+                        <p>
+                            Welkom bij de UCLL rijsimulatie!
+                        </p>
+                        <p>
+                            Deze eerste reeks oefeningen brengt je in contact met de bouwblokken
+                            waaruit algoritmes bestaan:
+                        </p>
+                        <ul>
+                            <li>
+                                Sequentie
+                            </li>
+                            <li>
+                                Voorwaardelijke uitvoering
+                            </li>
+                            <li>
+                                Herhaling
+                            </li>
+                        </ul>
+                        <p>
+                            Laten we er meteen aan beginnen. Elk van deze oefeningen plaatst je in een labyrintische stad waardoor je je weg
+                            moet banen naar je bestemming. Deze bestemming wordt telkens in het groen aangegeven.
+                        </p>
+                        <p>
+                            Je voertuig is echter niet interactief: je moet op voorhand alle rijinstructies ingeven, waarna
+                            je voertuig deze blindelings uitvoert. Het is dus belangrijk dat je goed nadenkt
+                            over welke instructies je ingeeft, zoniet zal je verongelukken.
+                        </p>
+                        <p>
+                            Instructies geef je als volgt in: open het bestand {code(`student.js`)} dat zich in dezelfde directory
+                            bevindt als dit html-bestand. Voor deze eerste oefening verklappen we al wat je moet schrijven:
+                        </p>
+                        {renderSourceCode(myFirstFunction)}
+                        <p>
+                            Dit definieert een <em>functie</em> genaamd {code(`myFirstFunction`)}.
+                            Een functie is een samenbundeling van instructies. In dit geval is er zo maar &eacute;&eacute;n, nl.
+                            {code(`forward(bike)`)}. Je kan vermoedelijk al raden wat het effect is van deze instructie.
+                        </p>
+                        <p>
+                            Telkens je {code(`student.js`)} gewijzigd hebt en je het resultaat ervan wil bewonderen, moet je eerst de pagina refreshen (F5)
+                            opdat het {code(`student.js`)}-script heringeladen wordt. Druk daarna op de play-knop (onder het stadsplan, rechts van de slider): dit zorgt ervoor dat de
+                            functie {code(`myFirstFunction`)} wordt <em>opgeroepen</em>, met als gevolg dat de instructies die het bevat uitgevoerd worden.
+                        </p>
+                    </>
+                );
+            }
+
             protected availableFunctionality : CarSimulation.functionality[] = [ 'forward' ]
 
             protected *generateSimulations()
@@ -247,6 +247,65 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const sourceCode : string = `
+                function myFirstFunction(bike)
+                {
+                    forward(bike);
+                }
+
+                function ${functionName}(bike)
+                {
+                    forward(bike);
+                }`;
+
+                return (
+                    <>
+                        <p>
+                            The destination is now two squares away.
+                            The solution is straightforward: we need to execute {code(`forward(bike)`)} twice in a row.
+                            This is possible thanks to <em>sequencing</em>: this allows us to execute multiple instructions one after the other.
+                        </p>
+                        <p>
+                            Start by copying the function {code(`myFirstFunction`)} and rename the function to {functionName}:
+                        </p>
+                        {renderSourceCode(sourceCode)}
+                        <p>
+                            Each exercise will have you add a new function to the file {code(`student.js`)}.
+                            At the moment, {code(functionName)} contains the exact same instructions as {code(`myFirstFunction`)}.
+                            This cannot possibly be our intention.
+                            Refresh the page.
+                            You will see that you arrive only halfway your destination.
+                            The red line on the left confirms that the instructions are incorrect.
+                        </p>
+                        <p>
+                            Let's fix this.
+                            Inside {code(functionName)}, duplicate the {code(`forward`)}-line so that the instruction is repeated twice.
+                            Refresh and check that you do indeed arrive at your destination.
+                            The line on the left should have turned green.
+                        </p>
+                        <p>
+                            Quick note: in case the animation shows you arriving at the destination, yet the line stays red, this typically means that you have driven too far and crashed into a wall.
+                            There is no crash animation, so it looks like your vehicle just stopped on the right square.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const sourceCode : string = `
                 function myFirstFunction(bike)
@@ -329,6 +388,31 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            It should be clear what's expected.
+                            Note that, for each exercise, you should name the function the same as the exercise, i.e., {code(functionName)} in the case of this exercise.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -381,6 +465,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            This is getting predictable (and repetitive)&hellip;
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -432,6 +540,64 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const sourceCode = `
+                    let i = 4;
+
+                    while ( i > 0 )
+                    {
+                        forward(bike);
+                        i = i - 1;
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            Oh come on, this is just annoying.
+                            Who creates these exercises?
+                        </p>
+                        <p>
+                            Is there maybe a way to express we want to repeat the same instruction multiple times?
+                            It would definitely help with these silly exercises.
+                        </p>
+                        <p>
+                            Well, good news everyone!
+                            Most programming languages provide <em>loops</em>, and JavaScript is one of them.
+                            These loop do exactly what we're looking for.
+                        </p>
+                        {renderSourceCode(sourceCode)}
+                        <p>
+                            This is called a {code(`while`)}-loop.
+                            You can use it to repeat something as long as a certain condition is satisfied.
+                            Here we use the loop to repeat something 4&times;.
+                            We'll discuss the exact details later.
+                            Suffice it to say that we introduced a "counter" {code(`i`)} which we initially set to {code(`4`)}.
+                            With each step forward we make, we also decrease {code(`i`)} by {code(`1`)}.
+                            We keep doing this until {code(`i`)} reaches {code(`0`)}.
+                            This results in us taking four steps forward in total.
+                        </p>
+                        <p>
+                            Use this piece of code to solve the exercise.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const sourceCode = `
                     let i = 4;
@@ -521,6 +687,31 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Hah, we have loops now.
+                            We are invincible!
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -576,6 +767,35 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            We sure didn't see this coming.
+                            What now?
+                        </p>
+                        <p>
+                            It turns out that our bike is equipped with a steering wheel.
+                            You can turn right using {code(`turnRight(bike)`)}.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -628,6 +848,88 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            We'll need two loops.
+                        </p>
+                        <ul>
+                            <li>
+                                The first loop to move forwards five times.
+                            </li>
+                            <li>
+                                We turn right.
+                            </li>
+                            <li>
+                                The second loop to move 4&times; squares forward.
+                            </li>
+                        </ul>
+                        <p>
+                            While this is perfectly possible, it would mean we have to repeat the same looping code.
+                            Such duplication is a bad idea.
+                            Imagine someone in real life asks you for directions, what do you say?
+                        </p>
+                        <ul>
+                            <li>
+                                Drive one meter forward.
+                                Drive one meter forward.
+                                Drive one meter forward.
+                                Drive one meter forward.
+                                Drive one meter forward.
+                            </li>
+                            <li>
+                                Write down 5 on a piece of paper.
+                                Drive one meter forward.
+                                Decrease the number on the paper by one.
+                                Repeat this process until the paper says 0.
+                            </li>
+                            <li>
+                                Drive five meter forward.
+                            </li>
+                        </ul>
+                        <p>
+                            We suspect you'll pick the third option.
+                            In the case of programming, the same logic applies.
+                            You might think that, in the end, it doesn't really matter since you're talking to a machine, but keep in mind that code is written and read by human beings.
+                            <span style={{fontWeight: 'bold'}}>
+                                Write code that is detailed enough for a machine, but also readable to humans.
+                            </span>
+                        </p>
+                        <p>
+                            How do we improve the loop's readability?
+                            We can package it inside a separate function and give that function a descriptive name.
+                            If we need the loop, we can simply <em>call</em> the function instead.
+                            In other words, you can think of functions as giving a name to a series of instructions.
+                        </p>
+                        <p>
+                            It turns out that this is exactly what you've been doing already for the past few exercises!
+                            {code(`twiceForward`)}, {code(`thriceForward`)}, {code(`forward4`)}, etc. all contain instructions that achieve what the function's name describes.
+                            Some of these functions may rely on loops, some may not; in the end, what matters is that a function does exactly what its name says.
+                        </p>
+                        <p>
+                            To call your own function, e.g., {code(`forward5`)}, you need to write {code(`forward5(bike)`)}.
+                            In other words, it's the exact same syntax as when calling {code(`forward`)} or {code(`turnRight`)}.
+                            Try to solve exercises by relying as much as possible on functions you previously wrote.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 return (
                     <>
@@ -733,6 +1035,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Hint: 3 - 10 - 2.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -785,6 +1111,66 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const sourceCode = `
+                    function forwardN(bike, steps)
+                    {
+                        let i = steps;
+
+                        while ( i > 0 )
+                        {
+                            forward(bike);
+                            i = i - 1;
+                        }
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            This is a bit more troublesome.
+                            We first need to go 7 steps forward, then 9, then 3.
+                            We can go 7 steps forward using {code(`forward5(bike); twiceForward(bike);`)}, but it's not ideal.
+                            No normal person would say "drive 10 meters, drive 10 meters, drive 5 meters, drive 2 meters", but rather "drive 27 meters".
+                        </p>
+                        <p>
+                            We could of course define new functions {code(`forward7`)} and {code(`forward9`)}, but how far should we go?
+                            There's not really a limit and we could keep writing {code(`forward`)}-functions ad nauseam: {code(`forward5465`)}, {code(`forward5466`)}, {code(`forward5467`)}, &hellip;
+                        </p>
+                        <p>
+                            Luckily there exists a better solution.
+                            As of yet, you had to call functions using {code(`functionName(bike)`)}.
+                            But why does that {code(`bike`)} between parentheses do? {code(`bike`)} is a <em>parameter</em>:
+                            functions can declare that they need something to work with, such as {code(`forward`)} needs a vehicle to move forward.
+                            If you don't pass the {code(`bike`)} as parameter, {code(`forward`)} doesn't know which vehicle you're talking about.
+                        </p>
+                        <p>
+                            It is possible to have functions accept any number of parameters.
+                            A {code(`forwardN`)} function could receive a <em>second</em> parameter, namely the number of squares that the vehicle should move forward.
+                        </p>
+                        {renderSourceCode(sourceCode)}
+                        <p>
+                            In order to move 18 steps forward, you can now write {code(`forwardN(bike, 18)`)}.
+                            Add the definition for {code(`forwardN`)} to {code(`student.js`)} and use it to move multiple squares forward.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const sourceCode = `
                     function forwardN(bike, steps)
@@ -884,6 +1270,85 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const dumbLoop = `
+                    while ( sensor(bike) )
+                    {
+                        forward(bike);
+                    }
+                `;
+
+                const correctLoop = `
+                    while ( !sensor(bike) )
+                    {
+                        forward(bike);
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            How many meter do you need to drive from the old city hall to the station?
+                            You probably don't know.
+                            Neither do we.
+                            Does this mean that we cannot give directions?
+                            Do we really need to know the exact distances?
+                        </p>
+                        <p>
+                            Until now, there was only one map you needed to "solve".
+                            From now on, there will be multiple maps, and all will need to be solved with the same set of instructions.
+                        </p>
+                        <p>
+                            With your current knowledge, this is impossible.
+                            All instructions require exact distances.
+                        </p>
+                        <p>
+                            We solve this problem by installing a sensor on our bike.
+                            It is able to detect whether there is a wall in front of our bike.
+                            We can use the sensor using the instruction {code(`sensor(bike)`)}.
+                            Calling the {code(`sensor`)} function yields a result: a "yes" if there is a wall in front, a "no" if the passage is clear.
+                            In JavaScript, these values are called {code(`true`)} and {code(`false`)}, respectively.
+                        </p>
+                        <p>
+                            We can pass this result to a {code(`while`)}-loop.
+                            For example:
+                        </p>
+                        {renderSourceCode(dumbLoop)}
+                        <p>
+                            This code causes the bike to ride forwards as long as there is a wall in front.
+                            On second thought, this doesn't seem to be very useful.
+                            We'd rather ride forwards for as long there is <em>no</em> wall blocking the passage.
+                        </p>
+                        <p>
+                            We can "invert" these {code(`true`)}/{code(`false`)} values.
+                            This is called <em>negation</em> and is written
+                        </p>
+                        {renderSourceCode(correctLoop)}
+                        <p>
+                            This loop expresses "as long as the sensor does not produce code{`true`}, go forward".
+                            Or, put differently, "go forward for as long as the passage is clear".
+                        </p>
+                        <p>
+                            Use this new construct to solve this exercise.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const dumbLoop = `
                     while ( sensor(bike) )
@@ -990,6 +1455,46 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const dumbLoop = `
+                    while ( sensor(bike) )
+                    {
+                        forward(bike);
+                    }
+                `;
+
+                const correctLoop = `
+                    while ( !sensor(bike) )
+                    {
+                        forward(bike);
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            This shouldn't be a problem.
+                            Note that your instructions will again have to adapt to the map.
+                            Don't forget to reuse previously implemented functionality.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 const dumbLoop = `
                     while ( sensor(bike) )
                     {
@@ -1057,6 +1562,58 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const carParameter = `
+                function spiral(car)
+                {
+                    ...
+                }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            This escalated quickly.
+                            It's as if the person creating these exercises is going out of their way to make things difficult for us.
+                            Quite the sadist, if you ask us.
+                        </p>
+                        <p>
+                            Maybe you're tired of riding the bike.
+                            Since it looks like the distances are growing large, it may be time to upgrade to a car.
+                            It just so happened that we met a guy who was willing to exchange his car for our bike.
+                            We couldn't say no to that.
+                            From now on, use {code(`car`)} instead of {code(`bike`)} as parameter name.
+                            For example:
+                        </p>
+                        {renderSourceCode(carParameter)}
+                        <p>
+                            Now we have to deal with this spiral.
+                            We can of course solve it with a long sequence of alternating  {code(`forwardUntilWall`)} and {code(`turnRight`)}, but we'd rather avoid this since it rapidly becomes unreadable.
+                            Don't forget code has to be written as if meant for human eyes.
+                        </p>
+                        <p>
+                            We encoutered this situation before, i.e., with {code(`forward5`)}.
+                            We used a loop in order to avoid a long sequence of {code(`forward`)}s.
+                            Do the same for this exercise: find out which instructions must be repeated, how often they must be repeated, and set up a loop that takes care of doing exactly that.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const carParameter = `
                 function spiral(car)
@@ -1155,6 +1712,48 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             get explanations() : JSX.Element
             {
+                if ( language === 'nl' )
+                {
+                    return this.explanations_nl;
+                }
+                else
+                {
+                    return this.explanations_en;
+                }
+            }
+
+            private get explanations_en() : JSX.Element
+            {
+                return (
+                    <>
+                        <ATF.Components.DescriptionBox>
+                            <p>
+                                In the previous exercise, we told you to change the parameter name from {code(`bike`)} to {code(`car`)}.
+                                Maybe you inferrred from this that this update actually caused the change of vehicle.
+                                Make sure to test this: go back to the previous exercise, change the parameter name back to {code(`bike`)} and see what happens.
+                                It is crucial that you test things: never bulid code based on assumptions.
+                                Make it a habit to experiment: it is an excellent way to learn understand things better.
+                            </p>
+                            <p>
+                                So, did the car turn back into a bike?
+                            </p>
+                            <p>
+                                You will notice that the name of the parameter makes no difference.
+                                Which vehicle you get is actually determined by the exercise itself, regardless if you named the parameter {code(`car`)}, {code(`bike`)} or {code(`lightningMcQueen`)}.
+                                The parameter name only determines how you can refer to your vehicle from inside the function.
+                            </p>
+                            <p>
+                                It is important that you always choose a descriptive name.
+                                In fact, instead of {code(`car`)} or {code(`bike`)}, you should use {code(`vehicle`)}: this "vague" name expresses that the type of vehicle does not matter.
+                                Using {code(`car`)} as parameter name implies that you will need car-specific functionality, but in this series of exercises, cars have nothing more to offer than bikes.
+                            </p>
+                        </ATF.Components.DescriptionBox>
+                    </>
+                );
+            }
+
+            private get explanations_nl() : JSX.Element
+            {
                 return (
                     <>
                         <ATF.Components.DescriptionBox>
@@ -1203,6 +1802,35 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Okay, we need to tell you something&hellip;
+                            We thought we made a good deal exchanging our bike for that car, but we just found out the car can't turn left.
+                        </p>
+                        <p>
+                            To solve this exercise, you'll have to define {code(`turnLeft`)} yourself, relying on what you've seen before.
+                            Then use this new function to solve the exercise.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 return (
                     <>
@@ -1265,6 +1893,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            This is getting more challenging.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 return (
                     <>
@@ -1329,6 +1981,40 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            A three star exercise!
+                            These are a bit more difficult.
+                            You should be able to solve them, albeit with a little more effort.
+                        </p>
+                        <p>
+                            If you're not able to solve it, feel free to skip it and give it another shot later in the semester.
+                            In any case, try to resist the urge to look at the solution.
+                        </p>
+                        <p>
+                            As the maps show, we have forgotten whether to turn left or right.
+                            Try to find a way to deal with this issue.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 return (
                     <>
@@ -1414,6 +2100,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            You can solve this with the same trick from the previous exercise.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -1470,6 +2180,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            This one requires a different approach.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -1481,10 +2215,33 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get hint()
             {
+                if ( language === 'nl' )
+                {
+                    return this.hint_nl;
+                }
+                else
+                {
+                    return this.hint_en;
+                }
+            }
+
+            private get hint_nl()
+            {
                 return (
                     <>
                         <p>
                             Blijven draaien tot je een doorgang vindt.
+                        </p>
+                    </>
+                );
+            }
+
+            private get hint_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Just keep turning until you find a way out.
                         </p>
                     </>
                 );
@@ -1537,6 +2294,123 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const firstVersion = `
+                function sensorRight(car)
+                {
+                    turnRight(car);
+                    sensor(car);
+                    turnLeft(car);
+                }
+                `;
+
+                const secondVersion = `
+                function sensorRight(car)
+                {
+                    turnRight(car);
+                    return sensor(car);
+                    turnLeft(car);
+                }
+
+                function firstRight(car)
+                {
+                    // Mogelijk gebruik
+                    while ( sensorRight(car) )
+                    {
+                        forward(car);
+                    }
+                }
+                `;
+
+                const finalVersion = `
+                function sensorRight(car)
+                {
+                    turnRight(car);
+                    let result = sensor(car);
+                    turnLeft(car);
+
+                    return result;
+                }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            Based on the test cases (maps) shown above, it looks like you have to take the first right.
+                            This exercise's difficulty of 2 implies that solving it might be tougher than it looks.
+                        </p>
+                        <p>
+                            Below we explain how to go about solving this exercise, but it certainly can't hurt to first try on your own.
+                            While it is possible to solve all exercises with the concepts we've discussed, it can get more complex.
+                        </p>
+                        <p>
+                            In general, programming consists of breaking down problems into more manageable ones.
+                            We must keep breaking down until the remaining pieces are trivially solvable.
+                            The solutions to these trivial problems can then be glued together into a whole that can deal with the original problem.
+                            This is what we focus on in the next series of exercises.
+                        </p>
+                        <p>
+                            If you were to give directions for this map to a human being, you would simply tell them to take the first right.
+                            However, this is not detailed enough for a machine.
+                            We need to split it up into smaller instructions.
+                        </p>
+                        <p>
+                            Imagine you were blind and had to find the first right.
+                            You'd probably keep your a hand on the wall to the right of you and move forward until you encounter a "hole".
+                            At this point, you know you've found the correct side street.
+                            This feeling-with-your-hand can be done with your sensor.
+                        </p>
+                        <p>
+                            But there is a snag: you use your hand to sense what's to the right, but the sensor only detects what's in front of you.
+                            We should have a second sensor, {code(`sensorRight`)}, that lets us know if there's a wall to the right of us.
+                        </p>
+                        <p>
+                            Nothing prevents us from building our own.
+                            A {code(`sensorRight`)} is nothing more than a quick turn to the right, a sensor sensing, and a quick turn back.
+                        </p>
+                        {renderSourceCode(firstVersion)}
+                        <p>
+                            Earlier we mentioned how {code(`sensor`)} returned a value, i.e. {code(`true`)} or {code(`false`)} depending on whether there's a wall in front of us.
+                            We used this value in the condition of a {code(`while`)} loop.
+                            In the implementation for {code(`sensorRight`)} shown above, we don't really do anything with {code(`sensor`)}'s result.
+                            It is possible, however, to have {code(`sensorRight`)} <em>return</em> this value:
+                        </p>
+                        {renderSourceCode(secondVersion)}
+                        <p>
+                            We're heading in the right direction, but this code won't work: {code(`return`)} abruptly ends a function's execution.
+                            In other words, once {code(`sensor`)} has been called, the result is returned immediately, and no turn left is made.
+                        </p>
+                        <p>
+                            To solve this problem, we can make use of variables: they're like little boxes in which we can store values for later use.
+                        </p>
+                        {renderSourceCode(finalVersion)}
+                        <p>
+                            As you can see, we call {code(`sensor`)}, but instead of returning it right away, we store it in a variable named {code(`result`)}.
+                            Next, we turn left and then return the contents of {code(`result`)}.
+                        </p>
+                        <p>
+                            Add this definition for {code(`sensorRight`)} to {code(`student.js`)}.
+                            This function will make solving this exercise a lot easier: keep moving forward for as long as there's a wall to the right.
+                            Then turn right and drive forward.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const firstVersion = `
                 function sensorRight(car)
@@ -1699,6 +2573,31 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            After the previous exercise, this one shouldn't be too difficult.
+                            Don't forget to define helper functions!
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -1766,6 +2665,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            You know what to do.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -1819,34 +2742,145 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
-                const firstRight = `
-                function firstRight(car)
+                console.log(language);
+                if ( language == 'nl' )
                 {
-                    while ( sensorRight(car) )
-                    {
-                        forward(car);
-                    }
-
-                    turnRight(car);
-                    forwardTillWall(car);
+                    return this.description_nl;
                 }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const firstRight = `
+                    function firstRight(car)
+                    {
+                        while ( sensorRight(car) )
+                        {
+                            forward(car);
+                        }
+
+                        turnRight(car);
+                        forwardTillWall(car);
+                    }
                 `;
 
                 const firstRightImproved = `
-                function forwardUntilFreeRight(car)
-                {
-                    while ( sensorRight(car) )
+                    function forwardUntilFreeRight(car)
                     {
-                        forward(car);
+                        while ( sensorRight(car) )
+                        {
+                            forward(car);
+                        }
                     }
-                }
 
-                function firstRight(car)
-                {
-                    forwardUntilFreeRight(car);
-                    turnRight(car);
-                    forwardTillWall(car);
-                }
+                    function firstRight(car)
+                    {
+                        forwardUntilFreeRight(car);
+                        turnRight(car);
+                        forwardTillWall(car);
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            This one is causing us some trouble.
+                            If you were to reuse {code(`firstRight`)}, you'll end up at the end of the side street.
+                            You'd have to make a U-turn, drive all the way back, turn right, and call {code(`firstRight`)} a second time.
+                            We don't know about you, but that's definitely not how we take a second right.
+                        </p>
+                        <p>
+                            You probably defined {code(`firstRight`)} like this:
+                        </p>
+                        {renderSourceCode(firstRight)}
+                        <p>
+                            We can distinguish three phases:
+                        </p>
+                        <ul>
+                            <li>
+                                The {code(`while`)}-loop looks for the first passage to the right.
+                            </li>
+                            <li>
+                                {code(`turnRight`)} turns right.
+                            </li>
+                            <li>
+                                Driving through the side street with {code(`forwardTillWall`)}.
+                            </li>
+                        </ul>
+                        <p>
+                            This feels a bit awkward: the first phase is written out in detail and involves a loop, whereas the last two phases consist of a simple function call.
+                            We can even this out by extracting the first phase into a separate function:
+                        </p>
+                        {renderSourceCode(firstRightImproved)}
+                        <p>
+                            This change has multiple advantages:
+                        </p>
+                        <ul>
+                            <li>
+                                {code(`firstRight`)} becomes a bit more readable: we don't need to decipher a loop.
+                            </li>
+                            <li>
+                                {code(`forwardUntilFreeRight`)} becomes a reusable building block of its own.
+                            </li>
+                        </ul>
+                        <p>
+                            {code(`secondRight`)} can now be rewritten as
+                        </p>
+                        <ul>
+                            <li>
+                                Drive forward until the next free passage to the right.
+                            </li>
+                            <li>
+                                Drive past it.
+                            </li>
+                            <li>
+                                Drive forward until the next free passage to the right.
+                            </li>
+                            <li>
+                                Turn right.
+                            </li>
+                            <li>
+                                Drive until the end of the street.
+                            </li>
+                        </ul>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
+                const firstRight = `
+                    function firstRight(car)
+                    {
+                        while ( sensorRight(car) )
+                        {
+                            forward(car);
+                        }
+
+                        turnRight(car);
+                        forwardTillWall(car);
+                    }
+                `;
+
+                const firstRightImproved = `
+                    function forwardUntilFreeRight(car)
+                    {
+                        while ( sensorRight(car) )
+                        {
+                            forward(car);
+                        }
+                    }
+
+                    function firstRight(car)
+                    {
+                        forwardUntilFreeRight(car);
+                        turnRight(car);
+                        forwardTillWall(car);
+                    }
                 `;
 
                 return (
@@ -1969,6 +3003,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            We should have seen this coming a mile away.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -2025,38 +3083,132 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
-                const firstDraft = `
-                while ( less than 4 free rights encountered )
+                console.log(language);
+                if ( language == 'nl' )
                 {
-                    forward(car);
+                    return this.description_nl;
                 }
+                else
+                {
+                    return this.description_en;
+                }
+            }
 
-                turnRight(car);
-                forwardUntilWall(car);
+            private get description_en()
+            {
+                const firstDraft = `
+                    while ( less than 4 free rights encountered )
+                    {
+                        forward(car);
+                    }
+
+                    turnRight(car);
+                    forwardUntilWall(car);
                 `;
 
                 const forwardN = `
-                let i = steps;
+                    let i = steps;
 
-                while ( i > 0 )
-                {
-                    forward(car);
-                    i = i - 1;
-                }
+                    while ( i > 0 )
+                    {
+                        forward(car);
+                        i = i - 1;
+                    }
                 `;
 
                 const loop = `
-                let i = nrights;
+                    let i = nrights;
 
-                while ( i > 0 )
-                {
-                    forward(car);
-
-                    if ( !sensorRight(car) )
+                    while ( i > 0 )
                     {
+                        forward(car);
+
+                        if ( !sensorRight(car) )
+                        {
+                            i = i - 1;
+                        }
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            There's this nagging feeling that the author wants to tell us something&hellip;
+                            We could ignore that feeling, but we might regret it later on.
+                        </p>
+                        <p>
+                            It looks like a job for a loop.
+                            We'd like it to look like this:
+                        </p>
+                        {renderSourceCode(firstDraft)}
+                        <p>
+                            The loop condition still needs some work, but feel free to experiment before continuing.
+                        </p>
+                        <p>
+                            What we need is a variation on the loop from {code(`forwardN`)}.
+                            As a reminder, this is what is looked like:
+                        </p>
+                        {renderSourceCode(forwardN)}
+                        <p>
+                            At each step {code(`i`)} is decreased by {code(`1`)}.
+                            We keep doing this until {code(`i`)} reaches {code(`0`)}.
+                            But now we'd prefer that {code(`i`)} gets decreased only when we encounter a side street to the right.
+                            This can be achieved with
+                        </p>
+                        {renderSourceCode(loop)}
+                        <p>
+                            This is an example of an {code(`if`)}-statement.
+                            It looks very much like a {code(`while`)}-loop: there's a condition that determines whether the code between the curly braces will be executed.
+                            A loop will repeat these instructions for as long as the condition is true.
+                            An {code(`if`)}, however, will execute the code at most once: if the condition is true, the code is executed once.
+                            If the condition is false, the code is skipped.
+                        </p>
+                        <p>
+                            It can be useful to put this loop in a new function.
+                            However, we'd rather not have a function specialized in taking the fourth right.
+                            Instead, we generalize it to "the Nth right".
+                            This means the function will need a parameter.
+                            Write a function {code(`forwardUntilNthRight(car, nrights)`)} and put the above loop inside it and uses {code(`nrights`)} to know when to stop.
+                            Then use this function to solve this exercise.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
+                const firstDraft = `
+                    while ( less than 4 free rights encountered )
+                    {
+                        forward(car);
+                    }
+
+                    turnRight(car);
+                    forwardUntilWall(car);
+                `;
+
+                const forwardN = `
+                    let i = steps;
+
+                    while ( i > 0 )
+                    {
+                        forward(car);
                         i = i - 1;
                     }
-                }
+                `;
+
+                const loop = `
+                    let i = nrights;
+
+                    while ( i > 0 )
+                    {
+                        forward(car);
+
+                        if ( !sensorRight(car) )
+                        {
+                            i = i - 1;
+                        }
+                    }
                 `;
 
                 return (
@@ -2163,6 +3315,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Don't forget to write helper functions!
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -2229,6 +3405,101 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const pattern = `
+                    forwardUntilNthRight(car, n);
+                    turnRight(car);
+                `;
+
+                const L2 = `
+                    forwardUntilNthLeft(car, 2);
+                    turnLeft(car);
+                `;
+
+                const nestedFunction = `
+                    function maze(car)
+                    {
+                        function L(n)
+                        {
+                            forwardUntilNthLeft(car, n);
+                            turnLeft(car);
+                        }
+
+                        function R(n)
+                        {
+                            forwardUntilNthRight(car, n);
+                            turnRight(car);
+                        }
+
+                        R(2);
+                        L(1);
+                        ...
+                    }
+                `;
+
+                return (
+                    <>
+                        <p>
+                            Rely on {code(`forwardUntilNthLeft`)} and {code(`forwardUntilNthRight`)} to solve this exercise.
+                        </p>
+                        <p>
+                            You'll notice a pattern:
+                        </p>
+                        {renderSourceCode(pattern)}
+                        <p>
+                            Apart from suffering from duplicated code, we don't think it's particulary readable either.
+                            We'd like to have a shorthand notation instead:
+                        </p>
+                        {renderSourceCode(L2)}
+                        <p>
+                            Similarly for {code(`R(n)`)}.
+                            This way we can solve the exercise with a sequence of {code(`L(n)`)} and {code(`R(n)`)}.
+                        </p>
+                        <p>
+                            We could write {code(`L`)} en {code(`R`)} just like we defined all our other functions, but you'll have to admit {code(`L`)} en {code(`R`)} are rather cryptic names.
+                            It'd be nice if we could introduce {code(`L`)} and {code(`R`)} locally, as shorthand notations just for this exercise.
+                        </p>
+                        <p>
+                            JavaScript allows us to have "local functions"; these are known as <em>nested functions</em>.
+                            Defining them is very easy: simply put them inside the function that needs them:
+                        </p>
+                        {renderSourceCode(nestedFunction)}
+                        <p>
+                            Notice that you don't have to pass {code(`car`)} as a parameter: nested functions can access variables from their enclosing function.
+                        </p>
+                        <p>
+                            Nested functions should be used sparingly:
+                        </p>
+                        <ul>
+                            <li>
+                                They can only be used from within their enclosing function, i.e., they are not reusable for other exercises.
+                                If you notice you keep defining the same nested functions, you might want to consider whether it needs to be promoted to "regular" function.
+                                Nested functions are meant for instructions that are so specific that they only make sense in the context of their enclosing function.
+                            </li>
+                            <li>
+                                Nested functions often have very short names, like {code(`L`)} and {code(`R`)}.
+                                Make sure to keep it readable!
+                                Nested functions are not an excuse to start using short, undescriptive names everywhere.
+                            </li>
+                        </ul>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const pattern = `
                     forwardUntilNthRight(car, n);
@@ -2377,6 +3648,89 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                const multipleReturns = `
+                    if ( a )
+                    {
+                        return resultIfAIsTrue;
+                    }
+
+                    if ( b )
+                    {
+                        return resultIfAIsFalseButBIsTrue;
+                    }
+
+                    return resultIfBothAAndBAreFalse;
+                `;
+
+                return (
+                    <>
+                        <p>
+                            Look for the <em>dead end</em>.
+                            A dead end is a square that is surrounded by three walls.
+                            A possible algorithm to detect dead ends goes as follows:
+                        </p>
+                        <ol>
+                            <li>
+                                Is the passage in front of the vehicle free?
+                                If so, we're not at a dead end.
+                            </li>
+                            <li>
+                                Is the passage to the left free?
+                                If so, we're not at a dead end.
+                            </li>
+                            <li>
+                                Is the passage to the right free?
+                                If so, we're not at a dead end.
+                            </li>
+                            <li>
+                                We're at a dead end.
+                            </li>
+                        </ol>
+                        <p>
+                            Notice that a function can contain multiple {code(`return`)}s:
+                        </p>
+                        {renderSourceCode(multipleReturns)}
+                        <p>
+                            We suggest the following approach:
+                        </p>
+                        <ul>
+                            <li>
+                                Write a helper function {code(`turnAround`)} that makes a U turn.
+                            </li>
+                            <li>
+                                Write a helper function {code(`backward`)} that drives the car one square backward.
+                                Make sure the car's direction remains the same.
+                                For example, if the car is facing north before driving backward, the car must again be facing north after having driven one square back.
+                            </li>
+                            <li>
+                                Write a helper function {code(`isDeadEnd(car)`)} that checks for fdead ends.
+                            </li>
+                            <li>
+                                Write the function {code(`findDeadEnd(car)`)}.
+                                As you can see on the maps, one of the squares around the starting positions is a dead end.
+                                You will have to check all four directions: try out one direction, and if it's a dead end, stop right there.
+                                If it's not, drive back, turn right, and try again.
+                            </li>
+                        </ul>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 const multipleReturns = `
                     if ( a )
@@ -2530,6 +3884,35 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Keep following the road until you reach a dead end.
+                        </p>
+                        <p>
+                            This is an exercise of difficulty four.
+                            These tend to be quite hard, especially when you first encounter them.
+                            Don't feel bad if you can't find a solution; try again later in the semester when you have more experience coding.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -2612,6 +3995,31 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            To escape from the maze, you can use the <a href="https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower">right-hand rule</a>.
+                            Keep going until you reach a dead end.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -2685,6 +4093,39 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            Up until now, you've always been told exactly where the destination is: at the end of the street, at the dead end, etc.
+                            But now, there's nothing unique about the destination that allows you to recognize it and halt there.
+                        </p>
+                        <p>
+                            We therefore need to introduce a new building block.
+                            After {code(`forward`)}, {code(`turnRight`)} and {code(`sensor`)}, you'll also be able to use {code(`destinationReached`)}.
+                            It works just like {code(`sensor`)}, except that it returns {code(`true`)} in case the destination has been reached.
+                        </p>
+                        <p>
+                            You can now implement a function {code(functionName)} that knows when to stop the car.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
+            {
                 return (
                     <>
                         <p>
@@ -2755,6 +4196,30 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            You'll have to visit every square of the map.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 return (
                     <>
@@ -2851,6 +4316,33 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
+            {
+                console.log(language);
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_en()
+            {
+                return (
+                    <>
+                        <p>
+                            The holy grail.
+                            Write an algorithm that can reach any destination on any map.
+                            This one's quite tricky.
+                            You should be able to solve it by the time you graduate.
+                        </p>
+                    </>
+                );
+            }
+
+            private get description_nl()
             {
                 return (
                     <>

@@ -91,7 +91,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 }`;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Welcome to the UCLL Driving Simulation!
                         </p>
@@ -135,7 +135,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Then press the play-button (below the city map, to the right of the slider): this causes your function {code(`myFirstFunction`)} to be <em>called</em>,
                             meaning that all the instructions it contains will be executed.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -191,7 +191,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 }`;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             The destination is now two squares away.
                             The solution is straightforward: we need to execute {code(`forward(bike)`)} twice in a row.
@@ -219,7 +219,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Quick note: in case the animation shows you arriving at the destination, yet the line stays red, this typically means that you have driven too far and crashed into a wall.
                             There is no crash animation, so it looks like your vehicle just stopped on the right square.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -265,12 +265,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             It should be clear what's expected.
                             Note that, for each exercise, you should name the function the same as the exercise, i.e., {code(functionName)} in the case of this exercise.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -317,11 +317,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This is getting predictable (and repetitive)&hellip;
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -379,7 +379,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Oh come on, this is just annoying.
                             Who creates these exercises?
@@ -407,7 +407,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             Use this piece of code to solve the exercise.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -458,12 +458,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Hah, as if this is a challenge.
                             The loop truly makes us invincible.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -514,7 +514,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             We sure didn't see this coming.
                             What now?
@@ -523,7 +523,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             It turns out that our bike is equipped with a steering wheel.
                             You can turn right using {code(`turnRight(bike)`)}.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -569,7 +569,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             We'll need two loops.
                         </p>
@@ -631,7 +631,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             In other words, it's the exact same syntax as when calling {code(`forward`)} or {code(`turnRight`)}.
                             Try to solve exercises by relying as much as possible on functions you previously wrote.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -678,11 +678,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Hint: 3 - 10 - 2.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -744,7 +744,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This is a bit more troublesome.
                             We first need to go 7 steps forward, then 9, then 3.
@@ -771,7 +771,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             In order to move 18 steps forward, you can now write {code(`forwardN(bike, 18)`)}.
                             Add the definition for {code(`forwardN`)} to {code(`student.js`)} and use it to move multiple squares forward.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -845,7 +845,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             How many meter do you need to drive from the old city hall to the station?
                             You probably don't know.
@@ -890,7 +890,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             Use this new construct to solve this exercise.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -955,13 +955,13 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This shouldn't be a problem.
                             Note that your instructions will again have to adapt to the map.
                             Don't forget to reuse previously implemented functionality.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1017,7 +1017,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This escalated quickly.
                             It's as if the person creating these exercises is going out of their way to make things difficult for us.
@@ -1042,7 +1042,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             We used a loop in order to avoid a long sequence of {code(`forward`)}s.
                             Do the same for this exercise: find out which instructions must be repeated, how often they must be repeated, and set up a loop that takes care of doing exactly that.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1096,7 +1096,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             caption = "Parameters";
 
-            header = <React.Fragment>Parameters</React.Fragment>;
+            header = <>Parameters</>;
 
             hasDifficulty() : this is ATF.IHasDifficulty { return false; }
 
@@ -1107,7 +1107,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             get explanations() : JSX.Element
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <ATF.Components.DescriptionBox>
                             <p>
                                 In the previous exercise, we told you to change the parameter name from {code(`bike`)} to {code(`car`)}.
@@ -1130,7 +1130,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 Using {code(`car`)} as parameter name implies that you will need car-specific functionality, but in this series of exercises, cars have nothing more to offer than bikes.
                             </p>
                         </ATF.Components.DescriptionBox>
-                    </React.Fragment>
+                    </>
                 );
             }
         };
@@ -1154,7 +1154,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Okay, we need to tell you something&hellip;
                             We thought we made a good deal exchanging our bike for that car, but we just found out the car can't turn left.
@@ -1163,7 +1163,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             To solve this exercise, you'll have to define {code(`turnLeft`)} yourself, relying on what you've seen before.
                             Then use this new function to solve the exercise.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1216,11 +1216,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This is getting more challenging.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1280,7 +1280,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             A three star exercise!
                             These are a bit more difficult.
@@ -1294,14 +1294,14 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             As the maps show, we have forgotten whether to turn left or right.
                             Try to find a way to deal with this issue.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
             protected get hint()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             First, focus on the first map.
                             Rely on {code(`forwardUntilWall`)} for forward movements.
@@ -1313,7 +1313,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             It is perfectly acceptable to write code that does nothing under certain circumstances.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1366,11 +1366,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             You can solve this with the same trick from the previous exercise.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1422,22 +1422,22 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This one requires a different approach.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
             protected get hint()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Just keep turning until you find a way out.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1528,7 +1528,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Based on the test cases (maps) shown above, it looks like you have to take the first right.
                             This exercise's difficulty of 2 implies that solving it might be tougher than it looks.
@@ -1587,7 +1587,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             This function will make solving this exercise a lot easier: keep moving forward for as long as there's a wall to the right.
                             Then turn right and drive forward.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1651,12 +1651,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             After the previous exercise, this one shouldn't be too difficult.
                             Don't forget to define helper functions!
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1718,11 +1718,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             You know what to do.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1771,37 +1771,37 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 const firstRight = `
-                function firstRight(car)
-                {
-                    while ( sensorRight(car) )
+                    function firstRight(car)
                     {
-                        forward(car);
-                    }
+                        while ( sensorRight(car) )
+                        {
+                            forward(car);
+                        }
 
-                    turnRight(car);
-                    forwardTillWall(car);
-                }
+                        turnRight(car);
+                        forwardTillWall(car);
+                    }
                 `;
 
                 const firstRightImproved = `
-                function forwardUntilFreeRight(car)
-                {
-                    while ( sensorRight(car) )
+                    function forwardUntilFreeRight(car)
                     {
-                        forward(car);
+                        while ( sensorRight(car) )
+                        {
+                            forward(car);
+                        }
                     }
-                }
 
-                function firstRight(car)
-                {
-                    forwardUntilFreeRight(car);
-                    turnRight(car);
-                    forwardTillWall(car);
-                }
+                    function firstRight(car)
+                    {
+                        forwardUntilFreeRight(car);
+                        turnRight(car);
+                        forwardTillWall(car);
+                    }
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             This one is causing us some trouble.
                             If you were to reuse {code(`firstRight`)}, you'll end up at the end of the side street.
@@ -1862,7 +1862,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 Drive until the end of the street.
                             </li>
                         </ul>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -1920,11 +1920,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             We should have seen this coming a mile away.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2010,7 +2010,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             There's this nagging feeling that the author wants to tell us something&hellip;
                             We could ignore that feeling, but we might regret it later on.
@@ -2050,7 +2050,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Write a function {code(`forwardUntilNthRight(car, nrights)`)} and put the above loop inside it and uses {code(`nrights`)} to know when to stop.
                             Then use this function to solve this exercise.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2112,11 +2112,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Don't forget to write helper functions!
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2210,7 +2210,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Rely on {code(`forwardUntilNthLeft`)} and {code(`forwardUntilNthRight`)} to solve this exercise.
                         </p>
@@ -2254,7 +2254,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 Nested functions are not an excuse to start using short, undescriptive names everywhere.
                             </li>
                         </ul>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2338,7 +2338,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 `;
 
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Look for the <em>dead end</em>.
                             A dead end is a square that is surrounded by three walls.
@@ -2387,7 +2387,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                                 If it's not, drive back, turn right, and try again.
                             </li>
                         </ul>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2479,7 +2479,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Keep following the road until you reach a dead end.
                         </p>
@@ -2488,7 +2488,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             These tend to be quite hard, especially when you first encounter them.
                             Don't feel bad if you can't find a solution; try again later in the semester when you have more experience coding.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2561,12 +2561,12 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             To escape from the maze, you can use the <a href="https://en.wikipedia.org/wiki/Maze_solving_algorithm#Wall_follower">right-hand rule</a>.
                             Keep going until you reach a dead end.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2634,7 +2634,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             Up until now, you've always been told exactly where the destination is: at the end of the street, at the dead end, etc.
                             But now, there's nothing unique about the destination that allows you to recognize it and halt there.
@@ -2647,7 +2647,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                         <p>
                             You can now implement a function {code(functionName)} that knows when to stop the car.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2701,11 +2701,11 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             You'll have to visit every square of the map.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
@@ -2797,14 +2797,14 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             protected get description()
             {
                 return (
-                    <React.Fragment>
+                    <>
                         <p>
                             The holy grail.
                             Write an algorithm that can reach any destination on any map.
                             This one's quite tricky.
                             You should be able to solve it by the time you graduate.
                         </p>
-                    </React.Fragment>
+                    </>
                 );
             }
 
