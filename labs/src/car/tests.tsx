@@ -84,6 +84,18 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
             protected get description()
             {
+                if ( language == 'nl' )
+                {
+                    return this.description_nl;
+                }
+                else
+                {
+                    return this.description_en;
+                }
+            }
+
+            private get description_nl()
+            {
                 const myFirstFunction : string = `
                 function myFirstFunction(bike)
                 {
@@ -133,6 +145,63 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                             Telkens je {code(`student.js`)} gewijzigd hebt en je het resultaat ervan wil bewonderen, moet je eerst de pagina refreshen (F5)
                             opdat het {code(`student.js`)}-script heringeladen wordt. Druk daarna op de play-knop (onder het stadsplan, rechts van de slider): dit zorgt ervoor dat de
                             functie {code(`myFirstFunction`)} wordt <em>opgeroepen</em>, met als gevolg dat de instructies die het bevat uitgevoerd worden.
+                        </p>
+                    </React.Fragment>
+                );
+            }
+
+            private get description_en()
+            {
+                const myFirstFunction : string = `
+                function myFirstFunction(bike)
+                {
+                    forward(bike);
+                }`;
+
+                return (
+                    <React.Fragment>
+                        <p>
+                            Welcome to the UCLL Driving Simulation!
+                        </p>
+                        <p>
+                            This series of exercises will teach you the building blocks out of which algorithms are built:
+                        </p>
+                        <ul>
+                            <li>
+                                Sequences
+                            </li>
+                            <li>
+                                Conditional execution
+                            </li>
+                            <li>
+                                Repetition
+                            </li>
+                        </ul>
+                        <p>
+                            Let's get started right away.
+                            Each of these exercises will put you in a labyrinthine city through which you will have to find your way towards a certain destination.
+                            The destination is shown in green.
+                        </p>
+                        <p>
+                            There's a catch though: your vehicle cannot be controlled interactively.
+                            Instead, you need to provide it with all driving instructions ahead of time, after which it will strictly perform them.
+                            It is therefore important you carefully set up these instructions, lest you end up in an accident.
+                        </p>
+                        <p>
+                            Driving instructions are to be written down in the {code(`student.js`)} file that resides in the same directory as this html file.
+                            For this first exercise, we'll give away the solution:
+                        </p>
+                        {renderSourceCode(myFirstFunction)}
+                        <p>
+                            This defines a <em>function</em> named {code(`myFirstFunction`)}.
+                            A function bundles instructions together under a specified name.
+                            In our case, there's only one such instruction, namely {code(`forward(bike)`)}.
+                            You can probably guess what the effect will be of this instruction.
+                        </p>
+                        <p>
+                            Each time you update {code(`student.js`)} and wish to see the effect of your changes, you will have to refresh this page (F5) so that your browser reloads the {code(`student.js`)}-script.
+                            Then press the play-button (below the city map, to the right of the slider): this causes your function {code(`myFirstFunction`)} to be <em>called</em>,
+                            meaning that all the instructions it contains will be executed.
                         </p>
                     </React.Fragment>
                 );
@@ -262,7 +331,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
                 return (
                     <React.Fragment>
                         <p>
-                            Het zou duidelijk moeten zijn wat er verwacht wordt. De naam van de functie komt overeen met de titel van de oefening.
+                            Het zou duidelijk moeten zijn wat er verwacht wordt.
+                            De naam van de functie komt overeen met de titel van de oefening.
                         </p>
                     </React.Fragment>
                 );
@@ -2950,6 +3020,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
 
 declare const verifySolutions : boolean;
+declare const language : "en" | "nl";
 
 
 async function start()
