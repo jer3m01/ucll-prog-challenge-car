@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 
-const inputPath = path.join('.', 'src', 'car');
+const inputPath = path.join('.', 'src');
 const outputPath = process.env['OUTPUT'];
 
 if ( !inputPath )
