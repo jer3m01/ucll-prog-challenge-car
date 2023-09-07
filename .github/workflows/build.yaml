@@ -41,15 +41,3 @@ jobs:
           name: nl-${{ github.ref }}
           files: |
             car-nl.zip
-      - name: Release (EN)
-        uses: softprops/action-gh-release@v1
-        with:
-          name: en-latest
-          files: |
-            car-en.zip
-      - name: Release (NL)
-        uses: softprops/action-gh-release@v1
-        with:
-          name: nl-latest
-          files: |
-            car-nl.zip
