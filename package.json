@@ -1,7 +1,7 @@
 {
-  "name": "algo-exercises",
-  "version": "4.1.0",
-  "description": "Algorithmic Exercises",
+  "name": "car",
+  "version": "1.0.0",
+  "description": "Fun with Cars",
   "main": "index.js",
   "repository": {
     "type": "git",
