@@ -1,6 +1,6 @@
 {
   "name": "car",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Fun with Cars",
   "main": "index.js",
   "repository": {
