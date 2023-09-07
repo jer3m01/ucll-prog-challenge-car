@@ -1,0 +1,43 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - v*
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js 20.3
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.3
+      - name: Clean Install of Dependencies
+        run: npm ci
+      - name: Build
+        run: npm start
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r car-en.zip dist/car-en
+      - uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r car-nl.zip dist/car-nl
+      - name: Release (EN)
+        uses: softprops/action-gh-release@v1
+        with:
+          name: en-${{ github.ref }}
+          files: |
+            car-en.zip
+      - name: Release (NL)
+        uses: softprops/action-gh-release@v1
+        with:
+          name: nl-${{ github.ref }}
+          files: |
+            car-nl.zip
