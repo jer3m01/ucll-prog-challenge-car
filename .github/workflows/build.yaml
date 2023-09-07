@@ -25,10 +25,10 @@ jobs:
         run: npm start
       - uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r car-en.zip dist/car-en
+          args: zip -qq -r car-en.zip dist/car-en/*
       - uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r car-nl.zip dist/car-nl
+          args: zip -qq -r car-nl.zip dist/car-nl/*
       - name: Release (EN)
         uses: softprops/action-gh-release@v1
         with:
