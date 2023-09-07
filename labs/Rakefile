@@ -1,11 +1,11 @@
 require 'fileutils'
 
 
-def build(lab, devmode = true, extra_tests = false)
+def build(lab:, language:, dist_directory:, devmode: true, extra_tests: false)
     mode = devmode ? "development" : "production"
     input_directory = 'temp-input'
     output_directory = 'temp-output'
-    dist_lab_directory = "dist/chapters/#{lab}"
+    dist_lab_directory = "dist/#{dist_directory}"
 
     if devmode
         puts "Building #{lab} in DEVELOPMENT mode"
@@ -22,8 +22,8 @@ def build(lab, devmode = true, extra_tests = false)
     puts "Removing #{dist_lab_directory}"
     FileUtils.rm_rf dist_lab_directory
 
-    puts "Creating dist/chapters directory"
-    FileUtils.mkdir_p 'dist/chapters'
+    puts "Creating dist directory"
+    FileUtils.mkdir_p 'dist'
 
     sleep 1
     puts "Creating #{input_directory}"
@@ -40,7 +40,7 @@ def build(lab, devmode = true, extra_tests = false)
     puts "Compiling"
     environment_variables = { 'INPUT' => input_directory, 'OUTPUT' => output_directory }
     environment_variables['EXTRATESTS'] = '1' if extra_tests
-    environment_variables['LANGUAGE'] = 'nl'
+    environment_variables['LANGUAGE'] = language
     system(environment_variables, "npm run build:#{mode}") or abort "Failed to build #{lab}"
 
     puts "Moving #{output_directory} to #{dist_lab_directory}"
@@ -58,31 +58,56 @@ labs = Dir.chdir('src') do
 end.map(&:to_sym)
 
 
-labs.each do |lab|
-    desc "#{lab}"
-    task lab, [:mode] do |task, args|
-        case args.mode || 'prod'
-        when 'dev'
-            extra_tests = true
-            devmode = true
-        when 'prod'
-            extra_tests = false
-            devmode = false
-        else
-            abort "Unrecognized mode: should be dev or prod"
-        end
-
-        build lab, devmode, extra_tests
+desc 'Build Car (EN)'
+task :car_en, [:mode] do |task, args|
+    case args.mode || 'prod'
+    when 'dev'
+        extra_tests = true
+        devmode = true
+    when 'prod'
+        extra_tests = false
+        devmode = false
+    else
+        abort "Unrecognized mode: should be dev or prod"
     end
+
+    build(
+        lab: 'car',
+        language: 'en',
+        dist_directory: 'car-en',
+        devmode: devmode,
+        extra_tests: extra_tests
+    )
 end
+
+desc 'Build Car (NL)'
+task :car_nl, [:mode] do |task, args|
+    case args.mode || 'prod'
+    when 'dev'
+        extra_tests = true
+        devmode = true
+    when 'prod'
+        extra_tests = false
+        devmode = false
+    else
+        abort "Unrecognized mode: should be dev or prod"
+    end
+
+    build(
+        lab: 'car',
+        language: 'nl',
+        dist_directory: 'car-nl',
+        devmode: devmode,
+        extra_tests: extra_tests
+    )
+end
+
+desc 'Build Car (all languages)'
+task :car => [:car_en, :car_nl]
+
 
 desc 'Removes dist'
 task :clean do
     FileUtils.rm_rf 'dist'
 end
 
-desc 'Cleans and builds all exercises (no nonpublic exams)'
-task :exercises, [ :mode ] => [ 'clean' ] + %i[
-    car
-    car-english
-]
