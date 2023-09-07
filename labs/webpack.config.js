@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 
-const inputPath = process.env['INPUT'];
+const inputPath = path.join('.', 'src', 'car');
 const outputPath = process.env['OUTPUT'];
 
 if ( !inputPath )
@@ -68,11 +69,8 @@ function chapter(options)
                 },
                 {
                     test: /\.tsx?$/,
-                    use: { loader: 'ts-loader' },
+                    use: [ 'ts-loader' ],
                     exclude: /node_modules/,
-                    include: [
-                        path.resolve('.', inputPath)
-                    ]
                 },
                 {
                     test: /public-/,
@@ -119,7 +117,12 @@ function chapter(options)
                 }
              ]
         },
-        resolve: { extensions: ['.ts', '.tsx', '.js', '.css'] },
+        resolve: {
+            extensions: ['.ts', '.tsx', '.js', '.css'],
+            plugins: [
+                new TsconfigPathsPlugin({})
+            ]
+        },
         plugins: [
             new webpack.DefinePlugin({
                 verifySolutions: JSON.stringify(options.verifySolutions),

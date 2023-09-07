@@ -30,8 +30,9 @@ def build(lab:, language:, dist_directory:, devmode: true, extra_tests: false)
     FileUtils.mkdir input_directory
 
     files = Dir["./src/#{lab}/*" ]
-    files << './src/student.js'
-    files << './src/tests.html'
+    files << './src/car/student.js'
+    files << './src/car/tests.html'
+    files << './src/car/algo-testing-framework'
 
     puts "Copying files"
     puts files

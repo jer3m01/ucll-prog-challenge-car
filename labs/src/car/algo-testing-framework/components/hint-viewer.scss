@@ -1,0 +1,28 @@
+.hint-viewer {
+    width: 75%;
+    margin: 1em auto;
+    background: #CCF;
+    box-shadow: 5px 5px #DDF;
+
+    .Collapsible {
+        .Collapsible__trigger {
+            display: block;
+            background: #AAF;
+            text-align: center;
+            font-size: 2em;
+            padding: 0.2em;
+            font-variant: small-caps;
+            font-weight: bold;
+            user-select: none;
+            cursor: pointer;
+
+            &:hover {
+                background: #88F;
+            }
+        }
+
+        .Collapsible__contentInner {
+            padding: 1em;
+        }
+    }
+}

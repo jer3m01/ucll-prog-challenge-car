@@ -1,0 +1,12 @@
+import { isEqual } from 'lodash';
+
+
+export function deepEqual(x : any, y : any) : boolean
+{
+    return isEqual(x, y);
+}
+
+export function approximately(x : number, y : number, epsilon : number = 0.0001) : boolean
+{
+    return Math.abs(x - y) < epsilon;
+}

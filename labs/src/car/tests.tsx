@@ -1,6 +1,6 @@
 import React from 'react';
-import * as ATF from 'algo-testing-framework';
-import { SourceCode, Language } from 'algo-testing-framework';
+import * as ATF from '@/algo-testing-framework';
+import { SourceCode, Language } from '@/algo-testing-framework';
 import * as CarSimulation from './simulation';
 import { CarExercise } from './exercise';
 
