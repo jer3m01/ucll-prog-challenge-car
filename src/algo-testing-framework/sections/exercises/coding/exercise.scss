@@ -1,7 +1,3 @@
-@function shade($base, $amount){
-    @return $base + (invert($base) * $amount);
-}
-
 .coding.exercise {
     .test-cases {
         width: 80%;
@@ -46,10 +42,10 @@
                     border-left: $color 0.5em solid;
 
                     .Collapsible__trigger {
-                        background: linear-gradient(to right, shade($color, $header-start-amount), shade($color, $header-end-amount));
+                        background: linear-gradient(to right, lighten($color, $header-start-amount), lighten($color, $header-end-amount));
 
                         &:hover {
-                            background: shade($color, $highlight-amount);
+                            background: lighten($color, $highlight-amount);
                         }
                     }
 
