@@ -1,5 +1,5 @@
 import * as Type from "../type";
-import { map } from 'js-algorithms';
+import { map } from '@/algorithms';
 
 
 export function convertToString(x : any) : string

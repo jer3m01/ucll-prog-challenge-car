@@ -6,13 +6,13 @@ import { convertToString } from '../../formatters/string-formatters';
 import { FunctionCallResults, callFunction, FunctionInformation, parseFunction } from '../../function-util';
 import { evalm } from '../../evalm';
 import { deepEqual } from '../../equality';
-import { range } from 'js-algorithms';
+import { range } from '@/algorithms';
 
 
 export abstract class InputCase<META = {}>
 {
     abstract readonly args : any[];
-    
+
     abstract readonly meta : META;
 
     abstract readonly blankColumns : string[];
@@ -104,7 +104,7 @@ export class Form<META> extends React.Component<IProps<META>, IState>
             }
         };
     }
-    
+
     protected get columns() : IColumn<META>[]
     {
         const inputColumns : IColumn<META>[] = Array.from(this.generateInputColumns());

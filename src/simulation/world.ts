@@ -1,5 +1,5 @@
 import { Cell } from './cell';
-import { createGrid, Grid, Position } from "js-algorithms";
+import { createGrid, Grid, Position } from '@/algorithms';
 
 
 

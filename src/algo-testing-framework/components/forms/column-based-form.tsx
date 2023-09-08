@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form as FormBase } from './form';
 import { ValidatedInput } from '../validated-input';
-import { contains } from 'js-algorithms';
+import { contains } from '@/algorithms';
 
 
 export interface IColumn<COLUMN, INPUT>

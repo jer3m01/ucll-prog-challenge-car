@@ -2,7 +2,7 @@ import React from 'react';
 import { IResult, IAssertion } from '.';
 import { Outcome } from '../outcome';
 import { IToJsxElement, simple } from '../formatters/jsx-formatters';
-import { isPermutation } from 'js-algorithms';
+import { isPermutation } from '@/algorithms';
 import { Maybe } from 'maybe';
 import './permutation.scss';
 import { deepEqual } from '../equality';

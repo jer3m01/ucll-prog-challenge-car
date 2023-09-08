@@ -1,5 +1,5 @@
 import { Animation, IAnimation } from './animation';
-import { sum } from 'js-algorithms';
+import { sum } from '@/algorithms';
 
 
 class Sequence<T> extends Animation<T>
@@ -12,7 +12,7 @@ class Sequence<T> extends Animation<T>
     }
 
     readonly duration : number;
-    
+
     get endValue() : T
     {
         const lastChild = this.children[this.children.length - 1];

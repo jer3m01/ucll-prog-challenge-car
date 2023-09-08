@@ -1,13 +1,13 @@
 import React from 'react';
 import * as Type from '../type';
-import { allEqual } from 'js-algorithms';
+import { allEqual } from '@/algorithms';
 import { Bitmap, Color } from '../imaging';
 import { BitmapViewer } from '../components/bitmap-viewer';
 import { Invalid } from '../components/invalid';
 import { convertToString } from './string-formatters';
 import { DiceViewer } from '../components/dice-viewer';
 import { InlineCode } from '../components/inline-code';
-import { all } from 'js-algorithms';
+import { all } from '@/algorithms';
 import { Maybe } from 'maybe';
 
 
@@ -64,7 +64,7 @@ function isRectangle2DArray<T>(xss : T[][]) : Maybe<string>
     {
         return Maybe.just("All elements should be arrays");
     }
-    else 
+    else
     {
         if ( !allEqual( xss.map(y => y.length) ) )
         {
@@ -89,7 +89,7 @@ export function grayscaleBitmap(xss : number[][], resize ?: { width: number, hei
             else
             {
                 const bitmap = Bitmap.fromGrayscale(xss);
-    
+
                 return (
                     <BitmapViewer bitmap={bitmap} resize={resize} />
                 );
@@ -115,7 +115,7 @@ export function rgbBitmap(xss : Color[][], resize ?: { width: number, height: nu
             else
             {
                 const bitmap = Bitmap.fromColors(xss);
-    
+
                 return (
                     <BitmapViewer bitmap={bitmap} resize={resize} />
                 );
@@ -141,7 +141,7 @@ export function blackAndWhiteBitmap(xss : boolean[][], resize ?: { width: number
             else
             {
                 const bitmap = Bitmap.fromBlackAndWhite(xss);
-    
+
                 return (
                     <BitmapViewer bitmap={bitmap} resize={resize} />
                 );

@@ -2,7 +2,7 @@ import React from 'react';
 import { AnimationViewer } from './animation-viewer';
 import * as ATF from 'algo-testing-framework';
 import * as CarSim from '../simulation';
-import { Position } from 'js-algorithms';
+import { Position } from '@/algorithms';
 
 
 const Animation = ATF.Animation;

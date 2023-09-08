@@ -6,7 +6,7 @@ import { IAssertion } from '../assertions';
 import { CollapsibleTestCase } from './collapsible-test-case';
 import { Outcome } from '../outcome';
 import * as Assertions from '../assertions';
-import { range } from 'js-algorithms';
+import { range } from '@/algorithms';
 
 
 export interface ITestCaseInput<Ps extends any[], META = {}>
@@ -19,7 +19,7 @@ export interface ITestCaseInput<Ps extends any[], META = {}>
 export abstract class ReferenceImplementationBasedCodingExercise<Ps extends any[], R, META = {}> extends TestCaseBasedCodingExercise
 {
     public abstract readonly referenceImplementation : (...args : Ps) => R;
-    
+
     protected abstract readonly testedImplementation : Maybe<(...args : Ps) => R>;
 
     protected abstract createReturnValueAssertion(expectedReturnValue : R, metadata : META) : IAssertion<R>;
@@ -46,7 +46,7 @@ export abstract class ReferenceImplementationBasedCodingExercise<Ps extends any[
             // Needed lest TypeScript forgets about it being nonnull
             const nonNullContent = content;
 
-            return new class extends CollapsibleTestCase 
+            return new class extends CollapsibleTestCase
             {
                 protected get header() : JSX.Element
                 {
@@ -69,9 +69,9 @@ export abstract class ReferenceImplementationBasedCodingExercise<Ps extends any[
     /**
      * Creates a single assertion based on expected results. This assertion can be composite, i.e., it
      * can contain subassertions related to parameter values and return value.
-     * 
+     *
      * See createReturnValueAssertion and createParameterAssertion.
-     * 
+     *
      * @param expected Expected results
      * @param metadata Extra data
      */

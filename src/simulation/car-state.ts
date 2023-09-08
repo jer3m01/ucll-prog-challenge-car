@@ -1,4 +1,4 @@
-import { Position, Direction } from "js-algorithms";
+import { Position, Direction } from '@/algorithms';
 
 
 export class CarState

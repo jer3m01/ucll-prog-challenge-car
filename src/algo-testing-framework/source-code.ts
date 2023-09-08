@@ -1,5 +1,5 @@
 import { js_beautify } from 'js-beautify';
-import { firstIndexOf, lastIndexOf } from 'js-algorithms';
+import { firstIndexOf, lastIndexOf } from '@/algorithms';
 
 export enum Language
 {

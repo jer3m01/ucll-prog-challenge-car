@@ -2,7 +2,7 @@ import { cloneDeep } from 'lodash';
 import { IType } from './type';
 import { Maybe } from 'maybe';
 import { deepEqual } from './equality';
-import { contains } from 'js-algorithms';
+import { contains } from '@/algorithms';
 
 
 export class FunctionInformation

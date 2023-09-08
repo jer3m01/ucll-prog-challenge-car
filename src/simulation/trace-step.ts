@@ -1,4 +1,4 @@
-import { Position, Direction } from 'js-algorithms';
+import { Position, Direction } from '@/algorithms';
 import { CarState } from './car-state';
 
 
@@ -50,7 +50,7 @@ export class TurnRightTraceStep extends TraceStep
     {
         super( new CarState(position, from), new CarState(position, to) );
     }
-    
+
     visit<T>(visitor : ITraceStepVisitor<T>) : T
     {
         return visitor.turnRight(this);

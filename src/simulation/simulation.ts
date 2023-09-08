@@ -1,11 +1,11 @@
 import { World } from './world';
 import { Empty, Wall, Destination } from './cell';
-import { Direction } from 'js-algorithms';
+import { Direction } from '@/algorithms';
 import { Trace } from './trace';
 import { CarState } from './car-state';
 import { ForwardTraceStep, TurnLeftTraceStep, TurnRightTraceStep } from './trace-step';
 import { CarSimulationException } from './car-exception';
-import { all } from 'js-algorithms';
+import { all } from '@/algorithms';
 
 
 export class Simulation
@@ -43,7 +43,7 @@ export class Simulation
     private crash()
     {
         this.crashed = true;
-        
+
         throw new CarSimulationException();
     }
 
@@ -118,7 +118,7 @@ export class Simulation
                 else if ( c === '>' )
                 {
                     registerInitialCarState(new CarState(position, new Direction(1, 0)));
-                    
+
                     return new Empty();
                 }
                 else if ( c === '^' )
