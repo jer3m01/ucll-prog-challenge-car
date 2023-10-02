@@ -1,0 +1,22 @@
+/**
+ * Utility template.
+ *
+ * Converts color to equivalent hex and rgb values.
+ */
+@mixin color($name, $color) {
+  --#{"" + $name}: #{$color};
+  --#{"" + $name}-rgb: #{red($color)}, #{green($color)}, #{blue($color)};
+}
+
+// Colors from various UCLL websites
+:root {
+  @include color(ucll-accent, #e30046);
+  @include color(ucll-accent-dark, #b40a4d);
+  @include color(background, #e9f3f8);
+  @include color(light-blue, #aae1fa);
+  @include color(blue, #003469);
+  @include color(green, #32af0c);
+  @include color(red, #e30147);
+  
+  --ucll-accent-gradient: linear-gradient(116.43deg, var(--ucll-accent) 0%,var(--ucll-accent-dark) 100%)
+}

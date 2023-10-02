@@ -1,0 +1,14 @@
+/**
+ * Theme inspired by UCLL.
+ */
+
+// Variables
+@import "./variables";
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--background);
+}

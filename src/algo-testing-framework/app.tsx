@@ -30,23 +30,20 @@ const Title = styled.div`
     left: 0px;
     top: 0px;
     width: 100%;
-    background: black;
+    background: var(--ucll-accent-gradient);
     color: white;
     text-align: center;
-    text-transform: uppercase;
-    height: 5em;
+    text-transform: capitalize;
+    padding: 1rem;
+    font-size: 1.75rem;
     margin: 0px;
     z-index: 1;
-    user-select: none;
-    cursor: pointer;
 `;
 
-const TitleCaption = styled.span`
-    font-size: 5vmin;
-`;
+const TitleCaption = styled.span``;
 
 const Version = styled.span`
-    font-size: 2vmin;
+    font-size: .5em;
 `;
 
 const TopContainer = styled.div`

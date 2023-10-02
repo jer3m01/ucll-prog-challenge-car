@@ -4,8 +4,9 @@ import ReactDOM from 'react-dom';
 import { createShell } from './shell';
 import { App } from '@/algo-testing-framework/app';
 
-export { IChapter, ISection } from './chapter';
-export { IFunctionRepository, fromWindow as createFunctionRepositoryFromWindow } from './function-repository';
+export type { IChapter, ISection } from './chapter';
+export type { IFunctionRepository } from './function-repository';
+export { fromWindow as createFunctionRepositoryFromWindow } from './function-repository';
 
 export { Outcome } from './outcome';
 
@@ -32,15 +33,17 @@ export { Assertions };
 import * as Imaging from './imaging';
 export { Imaging };
 
-import { IChapter } from './chapter';
+import type { IChapter } from './chapter';
 
 import * as Components from './components';
 export { Components };
 
-export { IHasDifficulty, difficulty } from './difficulty';
-export { IScored, Score } from './score';
+export type { IHasDifficulty, difficulty } from './difficulty';
+export type { IScored } from './score';
+export { Score } from './score';
 
-import { IConfiguration, configure } from './configuration';
+import type { IConfiguration } from './configuration';
+import { configure } from './configuration';
 
 export * from '@/algo-testing-framework/source-code';
 export * from '@/algo-testing-framework/solution-pack';

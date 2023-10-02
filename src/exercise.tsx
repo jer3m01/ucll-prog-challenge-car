@@ -98,7 +98,7 @@ export abstract class CarExercise extends BaseExercise implements IHasDifficulty
 
     protected abstract readonly availableFunctionality : functionality[];
 
-    protected abstract generateSimulations() : Iterable<Simulation>;
+    protected abstract generateSimulations() : Promise<Iterable<Simulation>>;
 
     protected abstract readonly testedFunction : Maybe<() => void>;
 
@@ -112,7 +112,7 @@ export abstract class CarExercise extends BaseExercise implements IHasDifficulty
     {
         super();
 
-        this.simulations = new Lazy( () => {
+        this.simulations = new Lazy(() => {
             const simulations = Array.from(this.generateSimulations());
 
             this.testedFunction.lift( f => {
@@ -184,7 +184,7 @@ export abstract class CarExercise extends BaseExercise implements IHasDifficulty
     {
         const me = this;
 
-        for ( let simulation of this.simulations.value )
+        for ( let simulation of this.simulations.value)
         {
             yield new class implements ITestCase
             {

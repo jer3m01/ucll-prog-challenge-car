@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 import { CarSimulationSummary } from './car-simulation-summary';
 import { CarSimulationViewer } from './car-simulation-viewer';
 

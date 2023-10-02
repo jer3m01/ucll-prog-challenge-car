@@ -1,2 +1,3 @@
-export { Color, Colors } from './color';
+export type { Color } from './color';
+export { Colors } from './color';
 export { Bitmap, loadImage } from './bitmap';

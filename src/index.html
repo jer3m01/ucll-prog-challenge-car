@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head data-version="%VERSION%">
+  <meta charset="UTF-8">
+  <title>Programming Challenge</title>
+
+  <link rel="icon" type="image/png"
+        href="https://www.ucll.be/themes/custom/calibr8_easytheme/bookmark-icons/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png"
+        href="https://www.ucll.be/themes/custom/calibr8_easytheme/bookmark-icons/favicon-32x32.png" sizes="32x32">
+
+  <style>
+    #failed-to-load {
+      width: 75%;
+      margin: 1em auto;
+      background: #FCC;
+      box-shadow: #FAA 5px 5px;
+      padding: 1em;
+      font-size: 150%;
+    }
+
+    #failed-to-load table {
+      width: 50%;
+      margin: 1em auto;
+      border-collapse: collapse;
+    }
+
+    #failed-to-load th {
+      text-align: center;
+    }
+
+    #failed-to-load td {
+      text-align: center;
+    }
+
+    #failed-to-load tr td:first-child {
+      font-weight: bold;
+    }
+
+    #failed-to-load tr:first-child th {
+      border-bottom: 2px solid black;
+    }
+
+    #failed-to-load td {
+      padding: 5px 0px;
+    }
+
+    #failed-to-load kbd {
+      background: #DDD;
+      padding: 5px 10px;
+      box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .4), inset -2px -2px 2px rgba(0, 0, 0, .4);
+    }
+
+    #failed-to-load li {
+      margin: 5px 0px;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+  <div id="failed-to-load">
+    <p>
+      Indien deze boodschap zichtbaar is, betekent dat dat er zich een fout heeft voorgedaan tijdens
+      het inlezen van je student.js bestand.
+    </p>
+    <ul>
+      <li>
+        Open de <a
+        href="https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers">browserconsole</a>.
+        <table>
+          <tbody>
+          <tr>
+            <th></th>
+            <th>Windows</th>
+            <th>MacOS</th>
+          </tr>
+          <tr>
+            <td>Chrome</td>
+            <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>J</kbd></td>
+            <td><kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>J</kbd></td>
+          </tr>
+          <tr>
+            <td>Firefox</td>
+            <td><kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd></td>
+            <td><kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>K</kbd></td>
+          </tr>
+          <tr>
+            <td><a href="https://support.apple.com/en-gb/guide/safari/sfri20948/mac">Safari</a></td>
+            <td></td>
+            <td><kbd>Cmd</kbd> + <kbd>Opt</kbd> + <kbd>C</kbd></td>
+          </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        De foutmelding zou een hint moeten geven naar wat er verkeerd gelopen is. Let ook op het regelnummer waarop de
+        fout zich voordoet.
+      </li>
+    </ul>
+    <p>
+      Indien er geen foutmelding staat of de browser niet lijkt te reageren, betekent dit dat je vermoedelijk een
+      oneindige lus hebt ge&iuml;mplementeerd.
+    </p>
+    <ul>
+      <li>
+        Verwijder je meest recent geschreven code uit student.js. Het gemakkelijkste is door het <a
+        href="https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript">in commentaar</a> te
+        zetten.
+      </li>
+      <li>
+        Refresh de pagina. Mocht dit niet lukken, sluit je de tab en heropen je ze (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
+        <kbd>T</kbd> of <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>).
+      </li>
+      <li>
+        De opgaves zouden opnieuw moeten verschenen zijn. Indien dit niet zo is, verwijder je meer code uit student.js
+        tot alles terug werkt.
+      </li>
+      <li>
+        Herbekijk je code en tracht te ontdekken waarom je lus niet eindigt.
+      </li>
+    </ul>
+  </div>
+</div>
+<script src="student.js"></script>
+<script type="module" src="index.tsx"></script>
+</body>
+</html>

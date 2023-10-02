@@ -1,4 +1,5 @@
 export { Exercise } from './exercise';
-export { ITestCaseInput } from './test-case-input';
+export type { ITestCaseInput } from './test-case-input';
 export { ReturnValue } from './return-value';
-export { Parameters, IParameterChecker, IParameterCheckers } from './parameters';
+export type { IParameterChecker, IParameterCheckers } from './parameters';
+export { Parameters } from './parameters';
