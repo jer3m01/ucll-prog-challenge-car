@@ -1,5 +1,4 @@
 import React from 'react';
-import Sidebar from 'react-sidebar';
 import { ISection, IChapter, selectScoredSections } from './chapter';
 import { SectionOverview } from './components/section-overview';
 import styled from 'styled-components';
@@ -21,15 +20,12 @@ export interface IState
     selectedSectionIndex : number;
 }
 
-const Title = styled.div`
+const Title = styled.header`
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
+    width: 100dvw;
     background: var(--ucll-accent-gradient);
     color: white;
     text-align: center;
@@ -38,6 +34,7 @@ const Title = styled.div`
     font-size: 1.75rem;
     margin: 0px;
     z-index: 1;
+    box-sizing: border-box;
 `;
 
 const TitleCaption = styled.span``;
@@ -47,26 +44,34 @@ const Version = styled.span`
 `;
 
 const TopContainer = styled.div`
-    position: fixed;
-    top: 5em;
-    left: 0px;
-    bottom: 0px;
-    width: 100%;
+    display: flex;
+    align-items: stretch;
+    min-height: 0;
 `;
 
-const SectionContainer = styled.div`
+const Sidebar = styled.nav`
+   background: white;
+   color: white;
+   display: flex;
+   flex-direction: column;
+`;
+
+const SectionContainer = styled.main`
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center
     align-items: center;
-    margin: 1em;
+    padding: 1em;
     outline: none;
+    overflow: scroll;
+    flex-grow: 1;
 `;
 
 const SectionOverviewContainer = styled.div`
     position: relative;
-    height: calc(100% - 50px);
     overflow-y: scroll;
+    box-sizing: border-box;
+    padding: .5rem;
 `;
 
 const ScoreViewerContainer = styled.div`
@@ -77,6 +82,22 @@ const ScoreViewer = styled(UnstyledScoreViewer)`
     height: 100%;
     width: 100%;
     font-size: 150%;
+`;
+
+const LangSelector = styled.div`
+  position: absolute;
+  right: 2rem;
+  top: 1.25rem;
+}
+`;
+
+const LangButton = styled.button<{ current: boolean }>`
+     border: none;
+     font-size: .75rem;
+     background: ${props => props.current === true ? "var(--blue)" : "rgba(0, 0, 0, .1)"};
+     padding: .5rem;
+     color: white;
+     cursor: pointer;
 `;
 
 export class App extends React.Component<IProps, IState> {
@@ -103,13 +124,20 @@ export class App extends React.Component<IProps, IState> {
                 <Title>
                     <TitleCaption>{this.props.chapter.title}</TitleCaption>
                     <Version>{this.props.version}</Version>
+
+                    <LangSelector>
+                        <LangButton current={localStorage.getItem("lang") !== "en" } onClick={() => {localStorage.setItem("lang", "nl"); console.log("nl"); location.reload();}}> Nederlands</LangButton>
+                        <LangButton current={localStorage.getItem("lang") === "en" } onClick={() => {localStorage.setItem("lang", "en"); console.log("en");location.reload();}}> English</LangButton>
+                    </LangSelector>
                 </Title>
-                <TopContainer onKeyDown={(e) => onKeyDown(e)} tabIndex={0}>
-                    <Sidebar sidebar={renderSidebarContent()} docked={this.state.sidebarOpen}>
-                        <SectionContainer key={`section-${this.state.selectedSectionIndex}`} tabIndex={0}>
-                            {this.props.chapter.sections[this.state.selectedSectionIndex].content}
-                        </SectionContainer>
+                <TopContainer onKeyDown={onKeyDown} tabIndex={0}>
+                    <Sidebar>
+                        {renderSidebarContent()}
                     </Sidebar>
+
+                    <SectionContainer key={`section-${this.state.selectedSectionIndex}`} tabIndex={0}>
+                        {this.props.chapter.sections[this.state.selectedSectionIndex].content}
+                    </SectionContainer>
                 </TopContainer>
             </React.Fragment>
         );

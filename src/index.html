@@ -13,10 +13,10 @@
     #failed-to-load {
       width: 75%;
       margin: 1em auto;
-      background: #FCC;
-      box-shadow: #FAA 5px 5px;
+      border: #e30147 solid 5px;
       padding: 1em;
       font-size: 150%;
+      font-family: sans-serif;
     }
 
     #failed-to-load table {
@@ -42,7 +42,7 @@
     }
 
     #failed-to-load td {
-      padding: 5px 0px;
+      padding: 5px 0;
     }
 
     #failed-to-load kbd {
@@ -52,20 +52,37 @@
     }
 
     #failed-to-load li {
-      margin: 5px 0px;
+      margin: 1rem 0;
+    }
+
+    #lang-en:checked ~ div span.nl {
+      display: none;
+    }
+
+    #lang-nl:checked ~ div span.en {
+      display: none;
+    }
+
+    #lang-nl {
+      margin-left: calc(90% - 20ch);
     }
   </style>
 </head>
 <body>
 <div id="app">
+  <input type="radio" name="lang" id="lang-nl" value="nl" checked/><label for="lang-nl">Nederlands</label>
+  <input type="radio" name="lang" id="lang-en" value="en"/><label for="lang-en">English</label>
   <div id="failed-to-load">
     <p>
-      Indien deze boodschap zichtbaar is, betekent dat dat er zich een fout heeft voorgedaan tijdens
-      het inlezen van je student.js bestand.
+      <span class="nl">Indien deze boodschap zichtbaar is, betekent dat dat er zich een fout heeft voorgedaan tijdens
+      het inlezen van je student.js bestand.</span>
+
+      <span
+        class="en">If this message is visible, it means that an error occurred while reading your student.js file.</span>
     </p>
     <ul>
       <li>
-        Open de <a
+        Open <span class="nl">de</span><span class="en">the</span> <a
         href="https://webmasters.stackexchange.com/questions/8525/how-do-i-open-the-javascript-console-in-different-browsers">browserconsole</a>.
         <table>
           <tbody>
@@ -93,34 +110,55 @@
         </table>
       </li>
       <li>
-        De foutmelding zou een hint moeten geven naar wat er verkeerd gelopen is. Let ook op het regelnummer waarop de
-        fout zich voordoet.
+        <span class="nl">De foutmelding zou een hint moeten geven naar wat er verkeerd gelopen is. Let ook op het regelnummer waarop de fout zich voordoet.</span>
+        <span class="en">The error message should give a hint to what went wrong. Also note the line number on which the error occurs.</span>
       </li>
     </ul>
     <p>
-      Indien er geen foutmelding staat of de browser niet lijkt te reageren, betekent dit dat je vermoedelijk een
-      oneindige lus hebt ge&iuml;mplementeerd.
+      <span class="nl">Indien er geen foutmelding staat of de browser niet lijkt te reageren, betekent dit dat je vermoedelijk een
+      oneindige lus hebt ge&iuml;mplementeerd.</span>
+      <span class="en">If there is no error message or the browser does not seem to respond, it means that you have probably implemented an infinite loop.</span>
     </p>
     <ul>
       <li>
-        Verwijder je meest recent geschreven code uit student.js. Het gemakkelijkste is door het <a
-        href="https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript">in commentaar</a> te
-        zetten.
+
+        <span class="nl">Verwijder je meest recent geschreven code uit student.js. Het gemakkelijkste is door het <a
+          href="https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript">in commentaar</a> te
+        zetten.</span>
+
+        <span class="en">Remove your most recently written code from the student.js file. The easiest is by <a
+          href="https://www.digitalocean.com/community/tutorials/how-to-write-comments-in-javascript">commenting</a> it out.</span>
       </li>
       <li>
-        Refresh de pagina. Mocht dit niet lukken, sluit je de tab en heropen je ze (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> +
-        <kbd>T</kbd> of <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>).
+        <span class="nl">Refresh de pagina. Mocht dit niet lukken, sluit je de tab en heropen je ze (<kbd>Ctrl</kbd> +
+          <kbd>Shift</kbd> +
+          <kbd>T</kbd> of <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>).
+        </span>
+
+        <span
+          class="en">Refresh the page. If this fails, close the tab and reopen it (<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd> of <kbd>Command</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>).</span>
       </li>
       <li>
-        De opgaves zouden opnieuw moeten verschenen zijn. Indien dit niet zo is, verwijder je meer code uit student.js
-        tot alles terug werkt.
+      <span class="nl">De opgaves zouden opnieuw moeten verschenen zijn. Indien dit niet zo is, verwijder je meer code uit student.js
+        tot alles terug werkt.</span>
+        <span class="en">The statements should have reappeared. If not, comment out more code from student.js until everything works again.</span>
       </li>
       <li>
-        Herbekijk je code en tracht te ontdekken waarom je lus niet eindigt.
+        <span class="nl">Herbekijk je code en tracht te ontdekken waarom je lus niet eindigt.</span>
+
+        <span class="en">Review your code and try to figure out why your loop doesn't stop.</span>
       </li>
     </ul>
   </div>
 </div>
+<script>
+  function setLangOnLoad() {
+    if (localStorage.getItem("lang") === "en") document.getElementById("lang-en").click();
+    else document.getElementById("lang-nl").click();
+  }
+
+  setLangOnLoad()
+</script>
 <script src="student.js"></script>
 <script type="module" src="index.tsx"></script>
 </body>

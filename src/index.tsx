@@ -152,7 +152,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -315,7 +316,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -454,7 +456,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -530,7 +533,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -605,7 +609,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -750,7 +755,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -829,7 +835,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -910,7 +917,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1095,7 +1103,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1171,7 +1180,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1329,7 +1339,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1512,7 +1523,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1619,7 +1631,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1858,7 +1871,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -1948,7 +1962,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2035,7 +2050,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2152,7 +2168,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2231,7 +2248,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2345,7 +2363,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2622,7 +2641,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2713,7 +2733,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -2789,7 +2810,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3049,7 +3071,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3128,7 +3151,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3359,7 +3383,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3449,7 +3474,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3691,7 +3717,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -3925,7 +3952,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -4035,7 +4063,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -4132,7 +4161,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -4235,7 +4265,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -4354,7 +4385,8 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
             }
 
             protected get description()
-            {
+            {
+
                 if ( language == 'nl' )
                 {
                     return this.description_nl;
@@ -4549,7 +4581,7 @@ async function createChapter(student : ATF.IFunctionRepository) : Promise<ATF.IC
 
 
 const verifySolutions: boolean = !import.meta.NOVERIFY;
-const language: "en" | "nl" = "en";
+const language = (localStorage.getItem("lang") as "en" | "nl") ?? "en";
 
 
 async function start()

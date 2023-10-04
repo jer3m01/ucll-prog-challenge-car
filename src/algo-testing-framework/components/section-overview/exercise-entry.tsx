@@ -6,14 +6,28 @@ import { ScoreViewer } from './score-viewer';
 import { difficulty } from '../../difficulty';
 
 
-const Container = styled.div`
+const Container = styled.button`
     display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background: black;
-    padding: 2px;
+    background: var(--blue);
+    padding: .5rem .75rem;
     margin: 2px;
+    cursor: pointer;
+    gap: .5rem;
+    border: none;
+    transition: all ease-in .1s;
+
+    &:hover {
+        background: var(--ucll-accent-dark);
+        color: white;
+    }
+
+    [aria-current="page"] & {
+        background: var(--ucll-accent);
+    }
 `;
 
 const Caption = styled.div`
@@ -29,11 +43,8 @@ const Caption = styled.div`
     cursor: pointer;
     user-select: none;
     margin: 1px;
-    background: black;
-
-    &:hover {
-        background: #444;
-    }
+    font-family: 'JetBrains Mono', monospace;
+    font-variant: normal;
 `;
 
 interface IProps

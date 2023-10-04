@@ -16,10 +16,22 @@ const InvisibleDifficultyViewer = styled(DifficultyViewer)`
     visibility: hidden;
 `;
 
-const Header = styled.header`
+const Header = styled.h2`
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    gap: .5rem;
+    user-select: auto;
+    background: var(--blue);
+    padding: 0.2em;
+    margin: 0;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+
+    .difficulty-viewer {
+        width: 4em;
+    }
 `;
 
 // TODO Get rid of this class, has been replaced by ExerciseSection

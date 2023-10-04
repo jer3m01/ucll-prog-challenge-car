@@ -40,15 +40,17 @@ export class UnstyledScoreViewer extends React.Component<IProps, IState>
 }
 
 export const ScoreViewer = styled(UnstyledScoreViewer)`
-    background: ${props => props.score.isPerfect ? '#AFA' : '#FAA'};
+    background: ${props => props.score.isPerfect ? 'var(--green)' : 'var(--red)'};
     border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+    font-variant: normal;
 
     td {
+        color: white;
         text-align: center;
         font-weight: bold;
-        border: 1px solid #888;
+        border: 2px solid rgba(0, 0, 0, .1);
         user-select: none;
-        cursor: default;
         width: 50%;
     }
 `;

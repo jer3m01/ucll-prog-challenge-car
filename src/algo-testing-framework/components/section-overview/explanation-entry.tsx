@@ -9,19 +9,29 @@ const Container = styled.div`
     align-items: stretch;
 `;
 
-const Caption = styled.div`
+const Caption = styled.button`
     width: 100%;
     text-align: center;
     font-variant: small-caps;
-    color: black;
-    padding: 2px 0.5em;
+    color: var(--blue);
+    border: none;
+    padding: .5rem .75rem;
+    width: 100%;
     cursor: pointer;
     user-select: none;
     margin: 1px;
-    background: #CCF;
+    background: var(--light-blue);
+    text-transform: capitalize;
+    font-weight: bold;
 
     &:hover {
-        background: #88F;
+        background: var(--ucll-accent-dark);
+        color: white;
+    }
+
+    [aria-current="page"] & {
+        background: var(--ucll-accent);
+        color: white;
     }
 `;
 

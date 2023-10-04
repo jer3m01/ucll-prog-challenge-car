@@ -27,7 +27,7 @@ const TopLevelContainer = styled.div`
 `;
 
 const EntryContainer = styled.div<{isSelected : boolean}>`
-    background: ${props => props.isSelected ? '#77F' : 'white'};
+    background: none;
     padding: 2px 4px;
 `;
 
@@ -51,7 +51,7 @@ export class TableOfContents<T> extends React.Component<IProps<T>, IState>
         function renderEntry(entry : T, index : number) : JSX.Element
         {
             return (
-                <EntryContainer key={index} onClick={onClick} isSelected={me.props.selectedIndex === index}>
+                <EntryContainer key={index} onClick={onClick} aria-current={me.props.selectedIndex === index ? "page" : undefined}>
                     {me.props.renderEntry(entry)}
                 </EntryContainer>
             );

@@ -28,7 +28,6 @@ function difficultyToNumberColor(difficulty : number) : string
 }
 
 const Container = styled.span<{ difficulty : number }>`
-    background: black;
     text-align: center;
     color: ${props => difficultyToNumberColor(props.difficulty)};
     padding-top: 0.1em;

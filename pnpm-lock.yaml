@@ -44,9 +44,6 @@ dependencies:
   react-rating:
     specifier: ^2.0.5
     version: 2.0.5(react-dom@16.14.0)(react@16.14.0)
-  react-sidebar:
-    specifier: ^3.0.2
-    version: 3.0.2(react-dom@16.14.0)(react@16.14.0)
   react-tabs:
     specifier: ^3.2.2
     version: 3.2.3(react@16.14.0)
@@ -5840,18 +5837,6 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /react-sidebar@3.0.2(react-dom@16.14.0)(react@16.14.0):
-    resolution: {integrity: sha512-LG/JO1cJvdRqSmUT+DOhJrml/b45/UqM9nm8emcgbJb5EKNegKCObZcrRqyzVix42VfFf0odytviAAFEYYTu1Q==}
-    peerDependencies:
-      react: '>=16.4.2'
-      react-dom: '>=16.4.2'
-    dependencies:
-      '@babel/runtime': 7.23.1
-      prop-types: 15.8.1
-      react: 16.14.0
-      react-dom: 16.14.0(react@16.14.0)
-    dev: false
 
   /react-tabs@3.2.3(react@16.14.0):
     resolution: {integrity: sha512-jx325RhRVnS9DdFbeF511z0T0WEqEoMl1uCE3LoZ6VaZZm7ytatxbum0B8bCTmaiV0KsU+4TtLGTGevCic7SWg==}

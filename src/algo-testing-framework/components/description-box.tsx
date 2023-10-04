@@ -15,11 +15,10 @@ export interface IState
 }
 
 const StyledBox = styled.section`
-    margin: 1em auto;
-    width: 80%;
-    background: #DDD;
-    box-shadow: 0px 0px 20px 2px gray;
-    padding: 0.5em 1em;
+    margin: 4rem;
+    padding: .75rem 1.5rem;
+    background: var(--background);
+    color: var(--blue);
 
     h1 {
         padding: 0.5em;
